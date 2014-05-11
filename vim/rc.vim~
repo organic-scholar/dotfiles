@@ -1,0 +1,57 @@
+"Vundle Config
+"=====================================================
+set nocompatible
+filetype off
+
+set rtp+=~bin/dotfiles/vim/plugins/vundle
+call vundle#rc("~/bin/dotfiles/vim/plugins")
+
+Plugin 'gmarkik/vundle'
+Plugin 'vim-stratifiedjs'
+
+filetype plugin indent on 
+"Environment Config
+"=====================================================
+set encoding=utf-8
+set guifont=DejaVu\ Sans\ Mono
+syntax enable
+syntax on
+set number
+colorscheme desert
+set linebreak
+set lines=40
+set columns=120
+set guioptions-=T "remove toolbar
+set guioptions+=LlRrb
+set guioptions-=LlRrb
+filetype on
+filetype plugin on
+filetype indent on
+
+"Editor Config
+"=====================================================
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set autoindent
+set wildmode=list:longest
+set foldenable
+set omnifunc=syntaxcomplete#Complete
+"Mappings
+"======================================================
+nmap <space> :
+imap ,e <esc>
+nm  ,nt :NERDTreeToggle<cr>
+nm sl :SessionList<cr>
+nm rc :e $MYVIMRC<cr>
+nm ,f :b 
+nm ,w :w<cr>
+nm ,d :bd<cr>
+nm mc m`b~``
+map ,c <c-_><c-_>
+"Misc
+"======================================================
+if has("autocmd")
+	autocmd bufwritepost rc.vim source $MYVIMRC
+endif
