@@ -1,29 +1,34 @@
-"Vundle Config
-"=====================================================
-set nocompatible
-set rtp+=~/bin/dotfiles/vim/
-execute pathogen#infect('plugins/{}')
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/dotfiles/vim/bundle/Vundle.vim
+set rtp+=~/dotfiles/vim
+let path='~/dotfiles/vim/bundle'
+call vundle#begin(path)
 
-"Powerline Config
-"====================================================
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
+Plugin 'ervandew/supertab'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'nono/vim-handlebars'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Raimondi/delimitMate'
 
-let g:Powerline_symbols = 'fancy'
+call vundle#end()
 
-"Environment Config
-"=====================================================
-au ColorScheme * highlight Pmenu guibg=brown gui=bold
 
+"Env Config
+"=============================
 set encoding=utf-8
-
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
-
-let g:neocomplete#enable_at_startup = 1
-let g:vimshell_prompt =  '$ '
 
 syntax on
 syntax enable
 set number
-colorscheme desert
+colorscheme tomorrow-night
 set linebreak
 
 set laststatus=2
@@ -34,20 +39,26 @@ set guioptions-=T "remove toolbar
 set guioptions+=LlRrb
 set guioptions-=LlRrb
 
+
 filetype on
 filetype plugin on
 filetype plugin indent on 
 filetype indent on
 
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
+
 au FocusLost * :wa
 set autowriteall
 
-
 "Editor Config
-"=====================================================
+""=====================================================
 
 set nowrap
 
+set ttyfast
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -71,10 +82,17 @@ set backspace=indent,eol,start
 
 set completeopt=longest,menuone
 
+"List chars
+set listchars=""
+set listchars=tab:\ \
+set listchars+=trail:.
+set listchars+=extends:>
+set listchars+=precedes:<
 
 
 "Mappings
 "======================================================
+
 nmap <space> :
 
 map ,p "+p 
@@ -83,7 +101,6 @@ map ,y "+y
             
 set wildmode=list:longest,list:full
 
-"nmap rc :
 nmap ,f :CtrlP<cr>
 nmap ,w :w<cr>
 nmap ,d :bd<cr>
@@ -94,40 +111,37 @@ nmap ,n :NERDTreeToggle<cr>
 nm mc m`b~``
 
 function! RenameFile()
-    let old_name = expand('%')
-    let new_name = input('New file name: ', expand('%'), 'file')
-    if new_name != '' && new_name != old_name
-        exec ':saveas ' . new_name
-        exec ':silent !rm ' . old_name
-        redraw!
-    endif
+	let old_name = expand('%')
+	let new_name = input('New file name: ', expand('%'), 'file')
+	if new_name != '' && new_name != old_name
+		exec ':saveas ' . new_name
+		exec ':silent !rm ' . old_name
+		redraw!
+	endif
 endfunction
+
 map <leader>n :call RenameFile()<cr>
 
 "Misc
 "======================================================
-if has("autocmd")
-	autocmd bufwritepost rc.vim source $MYVIMRC
-endif
 
-" Creates a session
+autocmd bufwritepost .vimrc source $MYVIMRC
+
 function! MakeSession()
-  let sessionFile = $HOME . "/bin/dotfiles/vim/sessions/myvim.session"
-  exe "mksession! " . sessionFile
+    let sessionFile = $HOME . "/.vim/sessions/vim.session"
+    exe "mksession! " . sessionFile
 endfunction
-
 
 function! LoadSession()
-  if argc() == 0
-    let sessionFile = $HOME . "/bin/dotfiles/vim/sessions/myvim.session"
-    if (filereadable(sessionFile))
-      exe 'source ' sessionFile
-    else
-      echo "No session loaded."
+    if argc() == 0
+        let sessionFile = $HOME . "/.vim/sessions/vim.session"
+        if (filereadable(sessionFile))
+            exe 'source ' sessionFile
+        else
+            echo "No session loaded."
+        endif
     endif
-  endif
 endfunction
 
-au VimEnter * nested :call LoadSession()
-au VimLeave * :call MakeSession()
-
+"au VimEnter * nested :call LoadSession()
+"au VimLeave * :call MakeSession()
