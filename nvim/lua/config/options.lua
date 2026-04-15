@@ -4,3 +4,6 @@
 --
 
 vim.g.mapleader = ","
+vim.o.autowrite = true
+vim.o.autowriteall = true
+

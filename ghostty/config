@@ -50,15 +50,19 @@
 
 
 
-window-width = 200
-window-height = 50
+window-width = 226
+window-height = 36
 
 window-save-state=always
+unfocused-split-opacity = 1
+
+keybind = ctrl+shift+r=reload_config
 
 keybind = performable:ctrl+h=goto_split:left
 keybind = performable:ctrl+j=goto_split:down
 keybind = performable:ctrl+k=goto_split:up
 keybind = performable:ctrl+l=goto_split:right
+
 
 keybind = performable:super+c=copy_to_clipboard
 keybind = super+v=paste_from_clipboard
@@ -67,6 +71,19 @@ keybind = ctrl+t=new_tab
 # tabs navigation
 keybind = ctrl+shift+h=previous_tab
 keybind = ctrl+shift+l=next_tab
+
+
+# splits
+keybind = ctrl+shift+o=new_split:right
+keybind = ctrl+shift+m=new_split:down
+keybind = ctrl+shift+x=close_surface
+
+# resize splits
+keybind = ctrl+alt+h=resize_split:left,20
+keybind = ctrl+alt+j=resize_split:down,20
+keybind = ctrl+alt+k=resize_split:up,20
+keybind = ctrl+alt+l=resize_split:right,20
+
 
 
 
