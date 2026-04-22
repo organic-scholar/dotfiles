@@ -18,3 +18,4 @@ if [[ ! $TERM =~ screen ]]; then
 fi
 
 bindkey -v
+
