@@ -6,4 +6,8 @@
 vim.g.mapleader = ","
 vim.o.autowrite = true
 vim.o.autowriteall = true
+vim.g.sidekick_nes = false
+
+
+
 

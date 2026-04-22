@@ -1,0 +1,29 @@
+# Spaceship settings
+SPACESHIP_PROMPT_ASYNC=true
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_CHAR_SYMBOL="⚡"
+SPACESHIP_PROMPT_DEFAULT_SUFFIX=" "
+
+# AWS section settings
+SPACESHIP_AWS_PREFIX=""
+SPACESHIP_AWS_SYMBOL="☁️ "
+
+# Kubectl section settings
+SPACESHIP_KUBECTL_SHOW=true
+SPACESHIP_KUBECTL_VERSION_SHOW=false
+SPACESHIP_KUBECTL_CONTEXT_SHOW_NAMESPACE=false
+SPACESHIP_KUBECTL_CONTEXT_SHOW=true
+SPACESHIP_KUBECTL_SYMBOL="☸️ "
+
+
+# Minimal spaceship sections for performance
+SPACESHIP_PROMPT_ORDER=(
+  time
+  user
+  dir
+  git
+  aws
+  kubectl
+  line_sep
+  char
+)

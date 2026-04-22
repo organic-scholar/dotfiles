@@ -48,10 +48,11 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-
-
 window-width = 226
-window-height = 36
+window-height = 60
+font-family = "Source Code Pro Medium"
+font-size = 10
+adjust-cell-height = 5
 
 window-save-state=always
 unfocused-split-opacity = 1
@@ -83,6 +84,10 @@ keybind = ctrl+alt+h=resize_split:left,20
 keybind = ctrl+alt+j=resize_split:down,20
 keybind = ctrl+alt+k=resize_split:up,20
 keybind = ctrl+alt+l=resize_split:right,20
+
+
+config-file = ?config.local
+
 
 
 
