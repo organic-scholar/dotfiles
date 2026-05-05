@@ -10,8 +10,9 @@ map({ "n", "v" }, "gl", "$", { desc = "Go to end of line" })
 
 map("n", "<leader>t", "<cmd>terminal<cr>", { desc = "New terminal" })
 
+map("t", "<Esc><Esc>", [[<C-\><C-n>]])
+map("n", "<leader>qr", "<cmd>restart<cr>", { desc = "Restart" })
 -- map("t", "<S-h>", [[<C-\><C-n><cmd>bprevious<cr>]])
 -- map("t", "<S-l>", [[<C-\><C-n><cmd>bnext<cr>]])
 -- map("t", "<C-h>", [[<C-\><C-n><C-w>h]])
 -- map("t", "<C-l>", [[<C-\><C-n><C-w>l]])
-map("t", "<Esc><Esc>", [[<C-\><C-n>]])

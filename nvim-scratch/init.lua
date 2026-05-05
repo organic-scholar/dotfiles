@@ -1,0 +1,31 @@
+require("init.mini")
+local now, later = MiniDeps.now, MiniDeps.later
+
+require("config.options")
+require("config.keymap")
+require("config.autocmds")
+
+now(function()
+  require("plugins.mini-icons")
+  require("plugins.tokyonight")
+  require("plugins.which-key")
+  -- require("plugins.snacks")
+  require("plugins.nvim-tree")
+  -- require("plugins.oil")
+end)
+
+later(function()
+  require("plugins.conform")
+  require("plugins.lspconfig")
+  require("plugins.blink")
+  require("plugins.lualine")
+  require("plugins.telescope")
+  require("plugins.persistence")
+  require("plugins.flash")
+  require("plugins.neogit")
+  require("plugins.sidekick")
+  require("plugins.snipe")
+  require("plugins.markdown")
+end)
+
+-- require("plugins.lazydev")
