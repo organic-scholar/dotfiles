@@ -7,10 +7,37 @@ add({
 
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("copilot")
-vim.lsp.enable("tofu_ls")
-vim.lsp.config("tofu_ls", {
-  root_dir = function(fname)
-    return require("lspconfig.util").root_pattern(".opentofu")(fname)
+-- vim.lsp.enable("tofu_ls")
+-- vim.lsp.config("tofu_ls", {
+--   root_dir = function(fname)
+--     return require("lspconfig.util").root_pattern(".opentofu")(fname)
+--   end,
+-- })
+vim.lsp.enable("terraformls")
+vim.lsp.enable("yamlls")
+vim.lsp.config('yamlls', {
+  settings = {
+    yaml = {
+      format = {
+        enable = true,
+        proseWrap = "preserve",
+        printWidth = 120
+      }
+    },
+  },
+})
+
+
+-- Disable semantic tokens for terraformls: terraform-ls returns invalid
+-- token lengths causing an infinite loop in str_utfindex on neovim nightly.
+-- https://github.com/neovim/neovim/issues/36257
+-- https://github.com/hashicorp/terraform-ls/issues/2094
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client.name == "terraformls" then
+      client.server_capabilities.semanticTokensProvider = nil
+    end
   end,
 })
 
