@@ -26,6 +26,7 @@ later(function()
   require("plugins.sidekick")
   require("plugins.snipe")
   require("plugins.markdown")
+  require("plugins.terminal")
 end)
 
 -- require("plugins.lazydev")
