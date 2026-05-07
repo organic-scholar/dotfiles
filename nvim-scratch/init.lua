@@ -6,6 +6,7 @@ require("config.keymap")
 require("config.autocmds")
 
 now(function()
+  require("plugins.treesitter")
   require("plugins.mini-icons")
   require("plugins.tokyonight")
   require("plugins.which-key")

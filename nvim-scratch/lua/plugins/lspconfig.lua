@@ -7,6 +7,7 @@ add({
 
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("copilot")
+vim.lsp.enable("helm_ls")
 -- vim.lsp.enable("tofu_ls")
 -- vim.lsp.config("tofu_ls", {
 --   root_dir = function(fname)
@@ -16,6 +17,12 @@ vim.lsp.enable("copilot")
 vim.lsp.enable("terraformls")
 vim.lsp.enable("yamlls")
 vim.lsp.config('yamlls', {
+  on_attach = function(client, bufnr)
+    if vim.bo[bufnr].filetype == "helm" then
+      vim.lsp.stop_client(client.id)
+    end
+  end,
+  filetypes = { "yaml", "yaml.docker-compose" }, -- exclude "helm"
   settings = {
     yaml = {
       format = {
