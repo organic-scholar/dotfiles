@@ -6,6 +6,12 @@ add({
 })
 
 require("blink.cmp").setup({
+  signature = {
+    enabled = true,
+    window = {
+      show_documentation = true,
+    },
+  },
   keymap = {
     preset = "default",
     ["<Tab>"] = { "select_next", "fallback" },

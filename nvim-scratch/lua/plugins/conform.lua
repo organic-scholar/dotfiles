@@ -11,7 +11,7 @@ require("conform").setup({
   },
 
   format_on_save = function(bufnr)
-    vim.notify("format_on_save for buf " .. bufnr)
+    --vim.notify("format_on_save for buf " .. bufnr)
     return { timeout_ms = 500, lsp_format = "fallback" }
   end,
 })

@@ -17,7 +17,7 @@ end)
 
 later(function()
   require("plugins.conform")
-  require("plugins.lspconfig")
+  require("plugins.lsp")
   require("plugins.blink")
   require("plugins.lualine")
   require("plugins.telescope")
