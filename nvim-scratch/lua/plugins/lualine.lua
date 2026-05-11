@@ -7,6 +7,6 @@ add({
 
 require("lualine").setup({
   options = {
-    theme = "tokyonight-night",
+    theme = "auto",
   },
 })

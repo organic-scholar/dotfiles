@@ -18,6 +18,16 @@ require("neogit").setup({
   },
 })
 
+require("codediff").setup({
+  keymaps = {
+    explorer = {
+      select = "o",
+    },
+  },
+})
+
 map("n", "<leader>gg", function()
   require("neogit").open({})
 end, { desc = "Open Neogit UI" })
+
+map("n", "<leader>gd", "<cmd>CodeDiff<CR>", { desc = "Open Code Diff" })
