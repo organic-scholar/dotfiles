@@ -16,6 +16,7 @@ require("blink.cmp").setup({
     preset = "default",
     ["<Tab>"] = { "select_next", "fallback" },
     ["<S-Tab>"] = { "select_prev", "fallback" },
+    ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
     -- ["<CR>"] = {
     --   "accept",
     --   -- function() -- sidekick next edit suggestion
