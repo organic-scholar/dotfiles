@@ -69,7 +69,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
-vim.lsp.inline_completion.enable()
+-- vim.lsp.inline_completion.enable()
 
 vim.diagnostic.config({
   -- show inline virtual text next to the line
