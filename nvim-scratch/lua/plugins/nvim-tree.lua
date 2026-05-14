@@ -19,6 +19,9 @@ require("nvim-tree").setup({
       },
     },
   },
+  filters = {
+    git_ignored = false,
+  },
 })
 
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })

@@ -23,8 +23,10 @@ opt.fillchars = {
   eob = " ",
 }
 opt.foldlevel = 99
-opt.foldmethod = "indent"
-opt.foldtext = ""
+-- opt.foldmethod = "indent"
+-- opt.foldtext = ""
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 -- opt.formatexpr = "v:lua.LazyVim.format.formatexpr()"
 opt.formatoptions = "jcroqlnt" -- tcqj
 opt.grepformat = "%f:%l:%c:%m"
