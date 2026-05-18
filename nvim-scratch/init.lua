@@ -29,6 +29,7 @@ later(function()
   require("plugins.snipe")
   require("plugins.markdown")
   require("plugins.terminal")
+  require("plugins.dap")
 end)
 
 -- require("plugins.lazydev")
