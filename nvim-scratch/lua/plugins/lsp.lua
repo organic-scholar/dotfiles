@@ -42,14 +42,16 @@ vim.lsp.config("tofu_ls", {
 })
 
 vim.lsp.config("terraformls", {
-  root_dir = function(fname)
-    local util = require("lspconfig.util")
+  root_dir = function(bufnr, on_dir)
     -- If a .opentofu file exists in the project root, don't start terraformls
-    if util.root_pattern(".opentofu")(fname) then
-      return nil
+    if vim.fs.root(bufnr, { ".opentofu" }) then
+      return
     end
-    -- Fallbacks: look for terraform indicators or git ancestor
-    return util.root_pattern(".terraform", ".terraform.lock.hcl", "main.tf", "terraform.tfvars")(fname) or util.find_git_ancestor(fname) or vim.loop.cwd()
+    -- Fallbacks: look for terraform indicators
+    local root = vim.fs.root(bufnr, { ".terraform-version", ".terraform.lock.hcl" })
+    if root then
+      on_dir(root)
+    end
   end,
 })
 
