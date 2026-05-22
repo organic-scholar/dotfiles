@@ -30,6 +30,7 @@ later(function()
   require("plugins.markdown")
   require("plugins.terminal")
   require("plugins.dap")
+  require("plugins.pairs")
 end)
 
 -- require("plugins.lazydev")
