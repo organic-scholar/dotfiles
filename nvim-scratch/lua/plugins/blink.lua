@@ -1,8 +1,13 @@
 local add = MiniDeps.add
 
 add({
-  source = "https://github.com/saghen/blink.cmp",
+  source = "saghen/blink.cmp",
   checkout = "v1.10.2",
+})
+
+add({
+  source = "rafamadriz/friendly-snippets",
+  checkout = "main",
 })
 
 require("blink.cmp").setup({
@@ -13,10 +18,10 @@ require("blink.cmp").setup({
     },
   },
   keymap = {
-    preset = "default",
-    ["<Tab>"] = { "select_next", "fallback" },
-    ["<S-Tab>"] = { "select_prev", "fallback" },
-    ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+    preset = "super-tab",
+    -- ["<Tab>"] = { "select_next", "fallback" },
+    -- ["<S-Tab>"] = { "select_prev", "fallback" },
+    -- ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
     -- ["<CR>"] = {
     --   "accept",
     --   -- function() -- sidekick next edit suggestion
@@ -45,10 +50,13 @@ require("blink.cmp").setup({
         treesitter = { "lsp" },
       },
     },
+    trigger = {
+      show_in_snippet = false,
+    },
     list = {
       selection = {
-        preselect = false,
-        auto_insert = true,
+        preselect = true,
+        auto_insert = false,
       },
     },
     documentation = {
@@ -64,6 +72,18 @@ require("blink.cmp").setup({
       enabled = false,
     },
   },
-})
+  sources = {
+    providers = {
+      snippets = {
+        opts = {
+          friendly_snippets = true, -- default
 
-local name = "blink.cmp"
+          -- see the list of frameworks in: https://github.com/rafamadriz/friendly-snippets/tree/main/snippets/frameworks
+          -- and search for possible languages in: https://github.com/rafamadriz/friendly-snippets/blob/main/package.json
+          -- the following is just an example, you should only enable the frameworks that you use
+          extended_filetypes = {},
+        },
+      },
+    },
+  },
+})

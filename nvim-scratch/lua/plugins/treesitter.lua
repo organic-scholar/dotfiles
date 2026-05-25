@@ -12,7 +12,7 @@ add({
   },
 })
 
-local parsers = { "helm", "terraform" }
+local parsers = { "helm", "terraform", "go" }
 
 require("nvim-treesitter").install(parsers)
 

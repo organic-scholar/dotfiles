@@ -12,7 +12,7 @@ require("nvim-tree").setup({
       open_win_config = {
         relative = "editor",
         border = "none",
-        width = vim.o.columns,
+        -- width = vim.o.columns,
         height = vim.o.lines - 2,
         row = 0,
         col = 0,
