@@ -16,14 +16,6 @@ local parsers = { "helm", "terraform", "go" }
 
 require("nvim-treesitter").install(parsers)
 
-vim.filetype.add({
-  pattern = {
-    [".*/templates/.*%.ya?ml"] = "helm",
-    [".*/templates/.*%.tpl"] = "helm",
-    ["helmfile.*%.ya?ml"] = "helm",
-  },
-})
-
 vim.api.nvim_create_autocmd("FileType", {
   pattern = parsers,
   callback = function(args)

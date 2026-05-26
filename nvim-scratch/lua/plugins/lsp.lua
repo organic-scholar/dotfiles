@@ -53,6 +53,15 @@ vim.lsp.config("terraformls", {
       on_dir(root)
     end
   end,
+  init_options = {
+    indexing = {
+      ignoreDirectoryNames = { "node_modules", ".git", "build" },
+    },
+    experimentalFeatures = {
+      validateOnSave = true,
+      prefillRequiredFields = true,
+    },
+  },
 })
 
 vim.lsp.config("yamlls", {

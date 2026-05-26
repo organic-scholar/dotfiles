@@ -2,6 +2,7 @@ require("init.mini")
 local now, later = MiniDeps.now, MiniDeps.later
 
 require("config.options")
+require("config.filetype")
 require("config.keymap")
 require("config.autocmds")
 
