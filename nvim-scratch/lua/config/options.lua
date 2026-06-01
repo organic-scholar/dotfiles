@@ -8,6 +8,8 @@ local opt = vim.opt
 vim.opt.title = true
 vim.opt.titlestring = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
 opt.autowrite = true -- Enable auto write
+opt.winbar = "%=%m %f"
+
 -- only set clipboard if not in ssh, to make sure the OSC 52
 -- integration works automatically.
 opt.clipboard = vim.env.SSH_CONNECTION and "" or "unnamedplus" -- Sync with system clipboard

@@ -27,6 +27,7 @@ require("mason-lspconfig").setup({
     "terraformls",
     "yamlls",
     "gopls",
+    "jsonls",
   },
 })
 
