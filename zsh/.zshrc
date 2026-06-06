@@ -1,27 +1,72 @@
-export ZSH="$HOME/.oh-my-zsh"
-export ZSH_CUSTOM="$HOME/dotfiles/zsh/custom"
-#export ZSH_THEME="robbyrussell"
+ZINIT_HOME="${HOME}/.local/share/zinit/zinit.git"
+ZSH_LIB="${HOME}/dotfiles/zsh/lib"
 
-export DISABLE_LS_COLORS=true
-export ZSH_THEME="spaceship"
-export EDITOR="nvim"
+source "$ZSH_LIB/aliases.zsh"
+source "$ZSH_LIB/paths.zsh"
+source "$ZSH_LIB/history.zsh"
+source "$ZSH_LIB/prompt.zsh"
+source "$ZSH_LIB/zoxide.zsh"
+source "$ZSH_LIB/eza.zsh"
+source "$ZSH_LIB/nvim.zsh"
+source "$ZSH_LIB/aws.zsh"
+
+source "${ZINIT_HOME}/zinit.zsh"
+
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 
-# RPS1='[aws:${AWS_PROFILE:-none}] [eks:$(kubectx_prompt_info)]'
+zi snippet OMZ::lib/key-bindings.zsh
+zinit snippet OMZP::git
+zinit snippet OMZP::vi-mode
+zinit snippet OMZP::sudo
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::aws
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::kubectx
+zinit snippet OMZP::command-not-found
+zinit light zsh-users/zsh-completions
+source "$ZSH_LIB/compinit.zsh"
 
-source "$HOME/dotfiles/zsh/aliases.zsh"
-source "$HOME/dotfiles/zsh/paths.zsh"
-source "$HOME/dotfiles/zsh/compinit.zsh"
-source "$HOME/dotfiles/zsh/prompt.zsh"
-source "$HOME/dotfiles/zsh/zoxide.zsh"
-source "$HOME/dotfiles/zsh/eza.zsh"
-source "$HOME/dotfiles/zsh/nvim.zsh"
-source "$HOME/dotfiles/zsh/aws.zsh"
 
-plugins=(git zsh-autosuggestions aws kubectl kubectx)
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light Aloxaf/fzf-tab
 
-source $ZSH/oh-my-zsh.sh
-[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
-bindkey -v
+eval "$(starship init zsh)"
+source <(fzf --zsh)
+#
+# zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*'
+# zstyle ':completion:*' accept-exact false
+
+
+# bindkey '^I' menu-expand-or-complete
+
+# Do not show the completion list.
+# zstyle ':completion:*' list-prompt ''
+# zstyle ':completion:*' select-prompt ''
+# zstyle ':completion:*' accept-exact-dirs false
+
+# Case-insensitive matching
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# Optional: avoid ambiguous beep/list behavior
+unsetopt LIST_AMBIGUOUS
+unsetopt AUTO_LIST
+unsetopt BASH_AUTO_LIST
+
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+# Optional but useful: allow partial-word matching too
+# zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# zstyle ':completion:*' menu no
+# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+# zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+#
+# bindkey '^I' menu-expand-or-complete
+
+bindkey '^I' menu-complete
+# 3. Disable the visual completion list from showing up
+zstyle ':completion:*' list-choices false
+bindkey '^@' fzf-tab-complete
 
