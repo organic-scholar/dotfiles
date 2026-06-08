@@ -2,15 +2,15 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-$kubernetes\
 $directory\
 $git_branch\
 $git_commit\
 $git_state\
 $git_status\
 $python\
-$aws\
 $sudo\
+$aws\
+$kubernetes\
 $cmd_duration\
 $line_break\
 $jobs\
@@ -27,4 +27,14 @@ error_symbol = '[\$](bold red)'
 vimcmd_symbol = '[](bold green)'
 
 
+[aws]
+# format = 'on [$symbol$profile]($style)'
+format = 'on [$symbol($profile)]($style) '
+style = 'fg:208'
+symbol = '☁️ '
 
+[kubernetes]
+format = 'at [$symbol$context( \($namespace\))]($style)'
+disabled = false
+style = "cyan"
+symbol = "☸️ "

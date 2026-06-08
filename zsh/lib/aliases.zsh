@@ -14,3 +14,7 @@ mkcd() {
   mkdir "$1"
   cd "$1"
 }
+
+if [ -f "${0:A:h}/aliases.local.zsh" ]; then
+    source "${0:A:h}/aliases.local.zsh"
+fi
