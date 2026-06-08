@@ -1,0 +1,50 @@
+.colors {
+  --sys-color--black: #000;
+  --sys-color--code-background: #171717;
+  --sys-color--code-blue-text: #4fa0ff;
+  --sys-color--code-green-text: #60d673;
+  --sys-color--code-grey-text: #808080;
+  --sys-color--code-pink-text: #ff96da;
+  --sys-color--code-primary-text: #fff;
+  --sys-color--code-purple-text: #969dff;
+  --sys-color--code-red-text: #ff5a59;
+  --sys-color--code-yellow-text: #ffdb0f;
+  --sys-color--error: #ff4c45;
+  --sys-color--error-container: #3c0202;
+  --sys-color--on-error-container: #ff4c45;
+  --sys-color--on-positive-container: #0ebc5f;
+  --sys-color--on-surface: #e6e6e6;
+  --sys-color--on-surface-low: rgba(255,255,255,0.12);
+  --sys-color--on-surface-variant: rgba(255,255,255,0.55);
+  --sys-color--positive: #0ebc5f;
+  --sys-color--positive-container: #002220;
+  --sys-color--surface: #0f0f0f;
+  --sys-color--surface-accent: #14204f;
+  --sys-color--surface-background: #000;
+  --sys-color--surface-bright: #1f1f1f;
+  --sys-color--surface-dim: #171717;
+  --sys-color--white: #fff;
+  --sys-color-acc-color--accent: #1f3b9b;
+  --sys-color-acc-color--accent-container: #192967;
+  --sys-color-acc-color--accent-fixed: #3186ff;
+  --sys-color-states--disabled-label-on-surface: rgba(230,230,230,0.38);
+  --sys-color-states--disabled-on-surface: rgba(230,230,230,0.12);
+  --sys-color-states--focus-on-surface: rgba(230,230,230,0.08);
+  --sys-color-states--hover-on-surface: rgba(230,230,230,0.08);
+  --sys-color-states--pressed-on-surface: rgba(230,230,230,0.12);
+
+  --sys-elevation--level1-color: rgba(0,0,0,0.28);
+  --sys-elevation--level1-shadow-blur: 20px;
+  --sys-elevation--level1-shadow-offset-x: 0;
+  --sys-elevation--level1-shadow-offset-y: 0;
+  --sys-elevation--level1-shadow-spread: 0;
+  --sys-elevation--level2-color: rgba(0,0,0,0.4);
+  --sys-elevation--level2-shadow-blur: 20px;
+  --sys-elevation--level2-shadow-offset-x: 0;
+  --sys-elevation--level2-shadow-offset-y: 0;
+  --sys-elevation--level2-shadow-spread: 0;
+  --sys-elevation--level1: 0 0 20px 0 rgba(0,0,0,0.28);
+  --sys-elevation--level2: 0 0 20px 0 rgba(0,0,0,0.4);
+}
+
+

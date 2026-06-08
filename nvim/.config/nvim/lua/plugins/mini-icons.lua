@@ -1,9 +1,11 @@
-local add = MiniDeps.add
-
-add({
-  source = "https://github.com/nvim-mini/mini.icons",
-  checkout = "0.17.0",
-})
-
-require("mini.icons").setup({})
-MiniIcons.mock_nvim_web_devicons() -- This is the key call
+return {
+  {
+    "nvim-mini/mini.icons",
+    version = "0.17.0",
+    config = function()
+      require("mini.icons").setup({})
+      -- Provide devicons shim used elsewhere
+      pcall(function() MiniIcons.mock_nvim_web_devicons() end)
+    end,
+  },
+}

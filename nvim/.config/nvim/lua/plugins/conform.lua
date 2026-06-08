@@ -1,17 +1,18 @@
-local add = MiniDeps.add
+return {
+  {
+    "stevearc/conform.nvim",
+    branch = "v9.1.0",
+    lazy = false,
+    config = function()
 
-add({
-  source = "https://github.com/stevearc/conform.nvim",
-  checkout = "v9.1.0",
-})
 
-require("conform").setup({
-  formatters_by_ft = {
-    lua = { "stylua" },
+
+
+
+      require("conform").setup({
+        formatters_by_ft = { lua = { "stylua" } },
+        format_on_save = function(bufnr) return { timeout_ms = 500, lsp_format = "fallback" } end,
+      })
+    end,
   },
-
-  format_on_save = function(bufnr)
-    --vim.notify("format_on_save for buf " .. bufnr)
-    return { timeout_ms = 500, lsp_format = "fallback" }
-  end,
-})
+}

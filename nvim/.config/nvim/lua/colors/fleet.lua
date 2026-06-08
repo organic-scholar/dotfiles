@@ -1,6 +1,3 @@
-MiniDeps.add({
-  source = "felipeagc/fleet-theme-nvim",
-  checkout = "master",
-})
-
-vim.cmd("colorscheme fleet")
+return {
+  { "felipeagc/fleet-theme-nvim", branch = "master", config = function() vim.cmd("colorscheme fleet") end },
+}

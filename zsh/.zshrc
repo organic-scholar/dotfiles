@@ -35,37 +35,17 @@ zinit light Aloxaf/fzf-tab
 
 eval "$(starship init zsh)"
 source <(fzf --zsh)
-#
-# zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*'
-# zstyle ':completion:*' accept-exact false
 
-
-# bindkey '^I' menu-expand-or-complete
-
-# Do not show the completion list.
-# zstyle ':completion:*' list-prompt ''
-# zstyle ':completion:*' select-prompt ''
-# zstyle ':completion:*' accept-exact-dirs false
-
-# Case-insensitive matching
-# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # Optional: avoid ambiguous beep/list behavior
 unsetopt LIST_AMBIGUOUS
 unsetopt AUTO_LIST
 unsetopt BASH_AUTO_LIST
 
-# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-# Optional but useful: allow partial-word matching too
-# zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-# zstyle ':completion:*' menu no
-# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-# zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-#
-# bindkey '^I' menu-expand-or-complete
-
 bindkey '^I' menu-complete
+
 # 3. Disable the visual completion list from showing up
 zstyle ':completion:*' list-choices false
 bindkey '^@' fzf-tab-complete

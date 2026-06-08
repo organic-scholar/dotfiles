@@ -1,6 +1,7 @@
-local add = MiniDeps.add
-
-add({
-  source = "knubie/vim-kitty-navigator",
-  checkout = "master",
-})
+return {
+  {
+    "knubie/vim-kitty-navigator",
+    branch = "master",
+    -- no extra config required
+  },
+}

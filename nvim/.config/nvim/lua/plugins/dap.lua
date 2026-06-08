@@ -1,22 +1,10 @@
-local add = MiniDeps.add
-
-add({
-  source = "https://codeberg.org/mfussenegger/nvim-dap.git",
-  checkout = "master",
-})
-
-add({
-  source = "https://github.com/leoluz/nvim-dap-go.git",
-  checkout = "main",
-})
-
-add({
-  source = "https://github.com/igorlfs/nvim-dap-view.git",
-  checkout = "main",
-})
-
-require("plugins.dap.keymap")
-require("plugins.dap.view")
-require("plugins.dap.event")
-
-require("plugins.dap.go")
+return {
+  { "mfussenegger/nvim-dap", branch = "master" },
+  { "leoluz/nvim-dap-go", branch = "main", config = function() require("plugins.dap.go") end },
+  { "igorlfs/nvim-dap-view", branch = "main", config = function() require("plugins.dap.view") end },
+  -- load keymaps and event handlers after dap is available
+  {
+    "mfussenegger/nvim-dap",
+    init = function() pcall(function() require("plugins.dap.keymap") end) end,
+  },
+}

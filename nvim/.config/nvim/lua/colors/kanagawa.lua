@@ -1,10 +1,10 @@
-MiniDeps.add({
-  source = "rebelot/kanagawa.nvim",
-  checkout = "master",
-})
-
-require("kanagawa").setup({
-  theme = "lotus",
-})
-
-vim.cmd.colorscheme("kanagawa")
+return {
+  {
+    "rebelot/kanagawa.nvim",
+    branch = "master",
+    config = function()
+      require("kanagawa").setup({ theme = "lotus" })
+      vim.cmd.colorscheme("kanagawa")
+    end,
+  },
+}

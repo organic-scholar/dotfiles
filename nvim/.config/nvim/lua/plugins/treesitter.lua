@@ -1,32 +1,21 @@
-local add = MiniDeps.add
-local utils = require("utils")
+return {
+  {
+    "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    -- run TSUpdate after installing/updating
+    build = function()
+      pcall(vim.cmd, "TSUpdate")
+    end,
+    config = function()
+      local parsers = { "helm", "terraform", "go" }
+      pcall(require("nvim-treesitter.install").ensure_installed, parsers)
 
-add({
-  source = "nvim-treesitter/nvim-treesitter",
-  checkout = "main",
-  monitor = "main",
-  hooks = {
-    post_checkout = function()
-      vim.cmd("TSUpdate")
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = parsers,
+        callback = function(args)
+          pcall(vim.treesitter.start, args.buf)
+        end,
+      })
     end,
   },
-})
-
-local parsers = { "helm", "terraform", "go" }
-
-require("nvim-treesitter").install(parsers)
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = parsers,
-  callback = function(args)
-    pcall(vim.treesitter.start, args.buf)
-  end,
-})
-
--- require('nvim-treesitter').setup({
---   ensure_installed = {
---     'helm'
---   },
--- })
---
---
+}

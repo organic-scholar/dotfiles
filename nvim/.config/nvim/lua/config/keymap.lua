@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
-map("n", "<space>", ":", { desc = "Command" })
+map("n", "<space>", "q:", { desc = "Command" })
 
 -- Window navigation
 -- map("n", "<C-h>", "<C-w>h")
@@ -10,6 +10,7 @@ map("n", "<space>", ":", { desc = "Command" })
 
 -- Quit
 map("n", "<leader>q", "<cmd>wall<CR><cmd>quit<CR>", { desc = "Quit" })
+map("n", "<leader>w", "<cmd>w<CR>", { desc = "Write" })
 
 map("n", "<c-q>", "<cmd>wqall<CR>", { desc = "Quit All" })
 map("n", "<leader>r", "<cmd>wall<CR><cmd>restart<CR>", { desc = "Restart" })
@@ -28,3 +29,5 @@ map("n", "<leader>fn", function()
   local name = vim.fn.input("New file: ")
   vim.cmd("edit " .. name)
 end, { desc = "New file" })
+
+map("n", "<leader>bd", "<cmd>bd<CR>", { desc = "Delete Buffer" })

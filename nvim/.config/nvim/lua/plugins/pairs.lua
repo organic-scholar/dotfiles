@@ -1,6 +1,3 @@
-local add = MiniDeps.add
-
-add({ source = "nvim-mini/mini.pairs", checkout = "main" })
-
-require("mini.pairs").setup()
-
+return {
+  { "nvim-mini/mini.pairs", branch = "main", config = function() require("mini.pairs").setup() end },
+}

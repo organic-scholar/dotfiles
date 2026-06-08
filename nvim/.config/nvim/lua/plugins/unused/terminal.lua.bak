@@ -33,11 +33,9 @@ local function toggle_float_term()
     col = 0,
   })
 
-  if vim.bo[term_buf].buftype ~= "terminal" then
-    vim.fn.jobstart(vim.o.shell, {
-      term = true,
-    })
-  end
+  if vim.bo[term_buf].buftype ~= "terminal" then vim.fn.jobstart(vim.o.shell, {
+    term = true,
+  }) end
   vim.api.nvim_set_current_win(term_win)
   vim.cmd("startinsert")
 end

@@ -1,0 +1,10 @@
+return {
+  {
+    "stevearc/oil.nvim",
+    branch = "v2.15.0",
+    config = function()
+      require("oil").setup({ win_options = { winbar = "%{fnamemodify(v:lua.require('oil').get_current_dir(), ':~')}" } })
+      vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+    end,
+  },
+}

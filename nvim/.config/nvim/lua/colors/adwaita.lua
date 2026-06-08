@@ -1,6 +1,3 @@
-MiniDeps.add({
-  source = "Mofiqul/adwaita.nvim",
-  checkout = "main",
-})
-
-vim.cmd.colorscheme("adwaita")
+return {
+  { "Mofiqul/adwaita.nvim", branch = "main", config = function() vim.cmd.colorscheme("adwaita") end },
+}

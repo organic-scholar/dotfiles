@@ -1,0 +1,85 @@
+-- local function dim_foreground_colors(factor)
+--   local bit = require("bit")
+--
+--   -- The core highlight groups you want to tone down
+--   local syntax_groups = {
+--     "Normal",
+--     "Comment",
+--     "Constant",
+--     "String",
+--     "Character",
+--     "Number",
+--     "Boolean",
+--     "Float",
+--     "Identifier",
+--     "Function",
+--     "Statement",
+--     "Conditional",
+--     "Repeat",
+--     "Label",
+--     "Operator",
+--     "Keyword",
+--     "Exception",
+--     "PreProc",
+--     "Include",
+--     "Define",
+--     "Macro",
+--     "PreCondit",
+--     "Type",
+--     "StorageClass",
+--     "Structure",
+--     "Typedef",
+--     "Special",
+--     "SpecialChar",
+--     "Tag",
+--     "Delimiter",
+--     "SpecialComment",
+--     "Debug",
+--     "Underlined",
+--     "Todo",
+--
+--     "Directory",
+--     "Title",
+--   }
+--
+--   for _, group in ipairs(syntax_groups) do
+--     -- link = false forces Neovim to resolve the real color if it inherits from another group
+--     local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
+--
+--     if hl and hl.fg then
+--       -- Deconstruct Neovim's integer color into individual R, G, B channels
+--       local r = bit.rshift(bit.band(hl.fg, 0xFF0000), 16)
+--       local g = bit.rshift(bit.band(hl.fg, 0x00FF00), 8)
+--       local b = bit.band(hl.fg, 0x0000FF)
+--
+--       -- Scale the brightness down by your factor
+--       r = math.floor(r * factor)
+--       g = math.floor(g * factor)
+--       b = math.floor(b * factor)
+--
+--       -- Pack them back into a single color integer
+--       local new_fg = bit.lshift(r, 16) + bit.lshift(g, 8) + b
+--
+--       -- Update the highlight group while keeping backgrounds and font styles intact
+--       vim.api.nvim_set_hl(0, group, {
+--         fg = new_fg,
+--         bg = hl.bg,
+--         bold = hl.bold,
+--         italic = hl.italic,
+--         underline = hl.underline,
+--         undercurl = hl.undercurl,
+--       })
+--     end
+--   end
+-- end
+--
+-- -- Automatically re-apply the dimming if the colorscheme reloads
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--   pattern = "*",
+--   callback = function()
+--     dim_foreground_colors(0.75) -- 0.75 reduces brightness by 25%
+--   end,
+-- })
+--
+-- -- Run right away on startup
+-- dim_foreground_colors(0.75)
