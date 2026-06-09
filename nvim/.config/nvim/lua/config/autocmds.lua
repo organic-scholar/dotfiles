@@ -36,6 +36,11 @@ vim.api.nvim_create_autocmd("CmdwinEnter", {
       silent = true,
       desc = "Quit command-line window",
     })
+    vim.keymap.set("n", "<esc>", "<cmd>quit<CR>", {
+      buffer = true,
+      silent = true,
+      desc = "Quit command-line window",
+    })
     vim.schedule(function() vim.cmd("startinsert") end)
   end,
 })

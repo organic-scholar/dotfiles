@@ -14,6 +14,7 @@ return {
           "neogit",
           "nvim-tree",
           "which-key",
+          -- "telescope",
         },
       })
       vim.cmd.colorscheme("material-darker")
