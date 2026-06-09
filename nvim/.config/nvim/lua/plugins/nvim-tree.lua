@@ -22,6 +22,9 @@ return {
           enable = true, -- highlight the currently opened file
           update_root = false, -- optionally change root to file's directory
         },
+        renderer = {
+          symlink_destination = false,
+        },
         on_attach = function(bufnr)
           local api = require("nvim-tree.api")
           local function opts(desc)

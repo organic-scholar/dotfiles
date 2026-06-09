@@ -34,7 +34,6 @@ style = 'fg:208'
 symbol = '☁️ '
 
 [kubernetes]
-format = 'at [$symbol$context( \($namespace\))]($style)'
+format = 'at [$symbol$context(\($namespace\))]($style) '
 disabled = false
-style = "cyan"
-symbol = "☸️ "
+symbol = '☸️ '
