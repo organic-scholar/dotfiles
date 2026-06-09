@@ -1,6 +1,2 @@
-return {
-  -- "AlexvZyl/default.nvim",
-  -- lazy = false,
-  -- priority = 1000,
-  -- config = function() require("default").load() end,
-}
+local theme = require("plugins.themes.material")
+return theme
