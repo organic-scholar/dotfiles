@@ -5,7 +5,10 @@ return {
     lazy = false,
     config = function()
       require("conform").setup({
-        formatters_by_ft = { lua = { "stylua" } },
+        formatters_by_ft = {
+          lua = { "stylua" },
+          markdown = { "prettier" },
+        },
         format_on_save = function(bufnr) return { timeout_ms = 500, lsp_format = "fallback" } end,
       })
     end,
