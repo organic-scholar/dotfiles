@@ -1,6 +1,8 @@
+# Variable definitions
 ZINIT_HOME="${HOME}/.local/share/zinit/zinit.git"
 ZSH_LIB="${HOME}/dotfiles/zsh/lib"
 
+# Source local libraries
 source "$ZSH_LIB/aliases.zsh"
 source "$ZSH_LIB/paths.zsh"
 source "$ZSH_LIB/history.zsh"
@@ -10,11 +12,10 @@ source "$ZSH_LIB/eza.zsh"
 source "$ZSH_LIB/nvim.zsh"
 source "$ZSH_LIB/aws.zsh"
 
+# Initialize Zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-
-
+# Snippets and plugin configurations
 zi snippet OMZ::lib/key-bindings.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::vi-mode
@@ -24,39 +25,40 @@ zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
+
+# Completions
 zinit light zsh-users/zsh-completions
 source "$ZSH_LIB/compinit.zsh"
 
-
+# Additional plugins
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light Aloxaf/fzf-tab
 
-
-eval "$(starship init zsh)"
-source <(fzf --zsh)
-
+# Completion styling and keybindings
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*'
+zstyle ':completion:*' list-choices false
 
-
-# Optional: avoid ambiguous beep/list behavior
+# Avoid ambiguous beep/list behavior
 unsetopt LIST_AMBIGUOUS
 unsetopt AUTO_LIST
 unsetopt BASH_AUTO_LIST
 
+# Key bindings
 bindkey '^I' menu-complete
-
-# 3. Disable the visual completion list from showing up
-zstyle ':completion:*' list-choices false
 bindkey '^@' fzf-tab-complete
 
+# Tool initializations (last)
+eval "$(starship init zsh)"
+source <(fzf --zsh)
 
-# Load a few important annexes, without Turbo
+#q Load a few important annexes, without Turbo
 # (this is currently required for annexes)
-zinit light-mode for \
-    zdharma-continuum/zinit-annex-as-monitor \
-    zdharma-continuum/zinit-annex-bin-gem-node \
-    zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
+# zinit light-mode for \
+#     zdharma-continuum/zinit-annex-as-monitor \
+#     zdharma-continuum/zinit-annex-bin-gem-node \
+#     zdharma-continuum/zinit-annex-patch-dl \
+#     zdharma-continuum/zinit-annex-rust
 
 ### End of Zinit's installer chunk

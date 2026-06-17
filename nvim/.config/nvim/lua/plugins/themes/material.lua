@@ -18,6 +18,7 @@ return {
         },
       })
       vim.cmd.colorscheme("material-darker")
+      -- vim.cmd.colorscheme("material-darker")
     end,
   },
 }

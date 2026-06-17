@@ -47,9 +47,7 @@ return {
 
       vim.lsp.config("yamlls", {
         on_attach = function(client, bufnr)
-          if vim.bo[bufnr].filetype == "helm" then
-            pcall(function() vim.lsp.Client:stop(client.id) end)
-          end
+          if vim.bo[bufnr].filetype == "helm" then pcall(function() vim.lsp.Client:stop(client.id) end) end
         end,
         filetypes = { "yaml", "yaml.docker-compose" },
         settings = { yaml = { format = { enable = true, proseWrap = "preserve", printWidth = 120 } } },
@@ -58,20 +56,20 @@ return {
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(args)
           local client = vim.lsp.get_client_by_id(args.data.client_id)
-          if client and client.name == "terraformls" then
-            client.server_capabilities.semanticTokensProvider = nil
-          end
+          if client and client.name == "terraformls" then client.server_capabilities.semanticTokensProvider = nil end
         end,
       })
 
       vim.diagnostic.config({
         virtual_text = { prefix = "●", spacing = 4 },
-        signs = { text = {
-          [vim.diagnostic.severity.ERROR] = " ",
-          [vim.diagnostic.severity.WARN] = " ",
-          [vim.diagnostic.severity.HINT] = " ",
-          [vim.diagnostic.severity.INFO] = " ",
-        } },
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = " ",
+            [vim.diagnostic.severity.WARN] = " ",
+            [vim.diagnostic.severity.HINT] = " ",
+            [vim.diagnostic.severity.INFO] = " ",
+          },
+        },
         underline = true,
         update_in_insert = false,
         severity_sort = true,

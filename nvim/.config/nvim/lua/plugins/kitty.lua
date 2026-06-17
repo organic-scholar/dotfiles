@@ -2,6 +2,6 @@ return {
   {
     "knubie/vim-kitty-navigator",
     branch = "master",
-    -- no extra config required
+    enabled = os.getenv("KITTY_PID") ~= nil,
   },
 }

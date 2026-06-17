@@ -1,2 +1,2 @@
-local theme = require("plugins.themes.material")
+local theme = require("plugins.themes.solarized")
 return theme

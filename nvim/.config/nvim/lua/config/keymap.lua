@@ -1,6 +1,7 @@
 local map = vim.keymap.set
 
 map("n", "<space>", "q:", { desc = "Command" })
+map("n", "<Esc>", "<cmd>nohlsearch<CR>", { silent = true })
 
 -- Window navigation
 -- map("n", "<C-h>", "<C-w>h")

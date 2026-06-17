@@ -32,6 +32,9 @@ return {
           end
           api.config.mappings.default_on_attach(bufnr)
           vim.keymap.set("n", "<CR>", api.tree.change_root_to_node, opts("CD"))
+          -- Free up f and F for flash.nvim
+          vim.keymap.del("n", "f", { buffer = bufnr })
+          vim.keymap.del("n", "F", { buffer = bufnr })
         end,
       })
 

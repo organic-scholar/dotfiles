@@ -1,0 +1,41 @@
+[general]
+live_config_reload = true
+import = [
+    "~/.config/alacritty/themes/solarized.toml"
+]
+
+
+[font]
+# normal = { family = "foobar", style = "Regular" }
+# bold = { family = "foobar", style = "Bold" }
+# offset = { x = 0, y = 0 }
+# glyph_offset = { x = 0, y = 0 }
+# normal = { family = "AdwaitaMono Nerd Font", style = "Regular" }
+# 
+# normal = { family = "GeistMono NF", style = "Regular" }
+normal = { family = "Google Sans Code", style = "Regular" }
+
+# [[font.normal_extra]]
+# family = "Noto Color Emoji"
+# [[font.glyph_offset]]
+# optional tuningdimensions = { columns = <integer>, lines = <integer> }
+
+# Add this:
+# [font]
+#   [[font.normal]]
+#   family = "AdwaitaMono Nerd Font"
+
+
+# [font]
+# # normal = { family = "Google Sans Code", style = "Regular" }
+# normal = { family = "AdwaitaMono Nerd Font", style = "Regular" }
+# glyph_offset = { x = 0, y = 0 }
+
+
+[window]
+dimensions = { columns = 259, lines = 60}
+
+[cursor]
+style = { blinking = "Always" }
+blink_interval = 500
+blink_timeout = 0
