@@ -1,5 +1,5 @@
 themes {
-    solarized_dark {
+    solarized-dark-alt {
         text_unselected {
             base 238 232 213
             background 7 54 66
