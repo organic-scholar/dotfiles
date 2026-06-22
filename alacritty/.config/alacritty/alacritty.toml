@@ -13,7 +13,9 @@ import = [
 # normal = { family = "AdwaitaMono Nerd Font", style = "Regular" }
 # 
 # normal = { family = "GeistMono NF", style = "Regular" }
-normal = { family = "Google Sans Code", style = "Regular" }
+normal = { family = "Google Sans Code NF", style = "Regular" }
+bold = { family = "Google Sans Code NF", style = "Bold" }
+size = 14
 
 # [[font.normal_extra]]
 # family = "Noto Color Emoji"
@@ -34,6 +36,7 @@ normal = { family = "Google Sans Code", style = "Regular" }
 
 [window]
 dimensions = { columns = 259, lines = 60}
+option_as_alt = "Both"
 
 [cursor]
 style = { blinking = "Always" }
@@ -54,7 +57,7 @@ binding = { key = "U", mods = "Control|Shift" }
 regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`\\\\]+"
 
 [terminal]
-shell = { program = "zellij", args = ["attach", "--create", "main"] }
+shell = { program = "/bin/zsh", args = ["-l", "-c", "exec zellij attach --create main"] }
 
 [keyboard]
 bindings = [

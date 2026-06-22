@@ -68,3 +68,4 @@ source <(fzf --zsh)
 
 ### End of Zinit's installer chunk
 eval "$(mise activate zsh)"
+

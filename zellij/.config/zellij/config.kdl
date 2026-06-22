@@ -16,7 +16,12 @@ keybinds clear-defaults=true {
         bind "Ctrl Shift o" { NewPane "right"; }
         bind "Ctrl Shift ," { NewPane "down"; }
         bind "Ctrl Shift ." { NewPane "stacked"; }
+        bind "Ctrl Shift o" { NewPane "right"; }
         bind "Ctrl Shift Enter" {  ToggleFocusFullscreen; SwitchToMode "normal"; }
+
+        bind "Ctrl Shift t" { NewTab; }
+        bind "Ctrl Shift h" { GoToPreviousTab; }
+        bind "Ctrl Shift l" { GoToNextTab; }
 
         bind "Ctrl h" {
             MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.3.0/vim-zellij-navigator.wasm" {
@@ -377,6 +382,7 @@ plugins {
 // eg. "https://example.com/my-plugin.wasm"
 load_plugins {
     zellij:link
+
 }
 web_client {
     font "monospace"
