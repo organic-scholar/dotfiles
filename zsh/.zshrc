@@ -49,6 +49,11 @@ unsetopt BASH_AUTO_LIST
 bindkey '^I' menu-complete
 bindkey '^@' fzf-tab-complete
 
+export EDITOR=nvim
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
 # Tool initializations (last)
 eval "$(starship init zsh)"
 source <(fzf --zsh)
@@ -62,3 +67,4 @@ source <(fzf --zsh)
 #     zdharma-continuum/zinit-annex-rust
 
 ### End of Zinit's installer chunk
+eval "$(mise activate zsh)"

@@ -20,6 +20,7 @@ return {
           "yamlls",
           "gopls",
           "jsonls",
+          "pyrefly",
         },
       })
 
