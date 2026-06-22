@@ -1,7 +1,7 @@
 [general]
 live_config_reload = true
 import = [
-    "~/.config/alacritty/themes/catppuccin-mocha.toml"
+    "~/.config/alacritty/themes/tomorrow-night.toml"
 ]
 
 
@@ -39,3 +39,28 @@ dimensions = { columns = 259, lines = 60}
 style = { blinking = "Always" }
 blink_interval = 500
 blink_timeout = 0
+
+
+
+[[hints.enabled]]
+command = "xdg-open" # On Linux/BSD
+# command = "open" # On macOS
+# command = { program = "cmd", args = [ "/c", "start", "" ] } # On Windows
+hyperlinks = true
+post_processing = true
+persist = false
+mouse.enabled = true
+binding = { key = "U", mods = "Control|Shift" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`\\\\]+"
+
+[terminal]
+shell = { program = "zellij", args = ["attach", "--create", "main"] }
+
+[keyboard]
+bindings = [
+{ key = "v", mods = "Super", action = "Paste" },
+{ key = "c", mods = "Super", chars = "Copy" },
+]
+
+
+

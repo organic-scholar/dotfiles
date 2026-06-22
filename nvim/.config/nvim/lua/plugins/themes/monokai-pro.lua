@@ -5,6 +5,6 @@ return {
   opts = {},
   config = function(_, opts)
     require("monokai-pro").setup(opts)
-    vim.cmd.colorscheme("monokai-pro-octagon")
+    vim.cmd.colorscheme("monokai-pro-machine")
   end,
 }

@@ -1,2 +1,2 @@
-local theme = require("plugins.themes.catppuccin")
+local theme = require("plugins.themes.tomorrow-night")
 return theme
