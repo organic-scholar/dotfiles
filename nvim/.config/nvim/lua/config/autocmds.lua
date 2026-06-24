@@ -91,3 +91,29 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     end
   end,
 })
+
+-- -- Create an autocommand group for Zellij integrations
+-- local zellij_group = vim.api.nvim_create_augroup("ZellijTabName", { clear = true })
+--
+-- -- Only run this configuration if we are actually inside a Zellij session
+-- if vim.env.ZELLIJ then
+--   vim.api.nvim_create_autocmd("VimEnter", {
+--     group = zellij_group,
+--     callback = function()
+--       -- Get the current working directory name (e.g., /home/user/project -> project)
+--       local cwd = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+--
+--       -- If you are in the home directory, default it to "~" instead of an empty string
+--       if cwd == "" then cwd = "~" end
+--
+--       -- Run the Zellij command silently in the background
+--       vim.fn.jobstart({ "zellij", "action", "rename-tab", cwd }, { detach = true })
+--     end,
+--   })
+--
+--   -- Optional: Undo the rename when exiting Neovim to restore the default behavior
+--   -- vim.api.nvim_create_autocmd("VimLeave", {
+--   --   group = zellij_group,
+--   --   callback = function() vim.fn.jobstart({ "zellij", "action", "undo-rename-tab" }, { detach = true }) end,
+--   -- })
+-- end

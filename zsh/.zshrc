@@ -11,6 +11,7 @@ source "$ZSH_LIB/zoxide.zsh"
 source "$ZSH_LIB/eza.zsh"
 source "$ZSH_LIB/nvim.zsh"
 source "$ZSH_LIB/aws.zsh"
+source "$ZSH_LIB/zellij.zsh"
 
 # Initialize Zinit
 source "${ZINIT_HOME}/zinit.zsh"
