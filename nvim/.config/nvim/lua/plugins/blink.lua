@@ -1,7 +1,7 @@
 return {
   {
     "saghen/blink.cmp",
-    branch = "v1.10.2",
+    tag = "v1.10.2",
     dependencies = { "rafamadriz/friendly-snippets" },
     opts = {
       signature = { enabled = true, window = { show_documentation = true } },
@@ -42,7 +42,11 @@ return {
         documentation = { auto_show = true, auto_show_delay_ms = 500, window = { border = "rounded" } },
         ghost_text = { enabled = true, show_without_selection = true },
       },
-      sources = { providers = { snippets = { opts = { friendly_snippets = true, extended_filetypes = {} } } } },
+      sources = {
+        default = { "snippets", "lsp", "path" },
+
+        providers = { snippets = { opts = { friendly_snippets = true, extended_filetypes = {} } } },
+      },
     },
   },
 }

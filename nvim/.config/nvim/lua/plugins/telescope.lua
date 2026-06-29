@@ -1,3 +1,5 @@
+local ignore_patterns = require("plugins.telescope.ignore")
+
 return {
   {
     "nvim-telescope/telescope.nvim",
@@ -9,11 +11,18 @@ return {
         branch = "main",
         build = function(path) vim.system({ "make" }, { cwd = path }) end,
       },
-      { "nvim-telescope/telescope-frecency.nvim", branch = "1.2.2" },
+      { "nvim-telescope/telescope-frecency.nvim", branch = "master" },
     },
     config = function()
       require("telescope").setup({
-        pickers = { buffers = {} },
+        pickers = {
+          buffers = {},
+          find_files = {
+            hidden = true,
+            no_ignore = true,
+            file_ignore_patterns = ignore_patterns,
+          },
+        },
         extensions = {
           fzf = { fuzzy = true, override_generic_sorter = true, override_file_sorter = true, case_mode = "smart_case" },
           frecency = { workspace = "CWD", show_scores = true, show_unindexed = true },

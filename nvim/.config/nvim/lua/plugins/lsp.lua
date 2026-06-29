@@ -21,6 +21,7 @@ return {
           "gopls",
           "jsonls",
           "pyrefly",
+          "ts_ls",
         },
       })
 

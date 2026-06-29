@@ -56,7 +56,7 @@ binding = { key = "U", mods = "Control|Shift" }
 regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`\\\\]+"
 
 [terminal]
-shell = { program = "/bin/zsh", args = ["-l", "-c", "exec zellij attach --create main"] }
+shell = { program = "/bin/zsh", args = ["-i", "-c", "exec zellij attach --create main"] }
 
 [keyboard]
 bindings = [
