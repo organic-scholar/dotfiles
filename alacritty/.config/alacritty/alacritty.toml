@@ -14,7 +14,7 @@ import = [
 # 
 # normal = { family = "GeistMono NF", style = "Regular" }
 normal = { family = "Google Sans Code NF", style = "Regular" }
-# size = 11
+size = 13
 
 # [[font.normal_extra]]
 # family = "Noto Color Emoji"
