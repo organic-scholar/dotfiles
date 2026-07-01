@@ -1,10 +1,10 @@
 return {
   {
     "mason-org/mason-lspconfig.nvim",
-    branch = "v2.2.0",
+    tag = "v2.2.0",
     dependencies = {
-      { "mason-org/mason.nvim", branch = "v2.2.1" },
-      { "neovim/nvim-lspconfig", branch = "v2.8.0" },
+      { "mason-org/mason.nvim", tag = "v2.2.1" },
+      { "neovim/nvim-lspconfig", branch = "master" },
     },
     config = function()
       pcall(require("mason").setup)

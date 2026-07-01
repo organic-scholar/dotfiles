@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    branch = "v9.1.0",
+    tag = "v9.1.0",
     lazy = false,
     config = function()
       require("conform").setup({

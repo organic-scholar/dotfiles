@@ -3,7 +3,7 @@ local ignore_patterns = require("plugins.telescope.ignore")
 return {
   {
     "nvim-telescope/telescope.nvim",
-    branch = "v0.2.2",
+    version = "v0.2.2",
     dependencies = {
       { "nvim-lua/plenary.nvim" },
       {
@@ -25,7 +25,7 @@ return {
         },
         extensions = {
           fzf = { fuzzy = true, override_generic_sorter = true, override_file_sorter = true, case_mode = "smart_case" },
-          frecency = { workspace = "CWD", show_scores = true, show_unindexed = true },
+          frecency = { workspace = "CWD", show_scores = false, show_unindexed = false },
         },
       })
 
@@ -51,7 +51,7 @@ return {
       vim.keymap.set(
         "n",
         "<leader>fr",
-        function() require("telescope").extensions.frecency.frecency({ theme = "ivy" }) end,
+        function() require("telescope").extensions.frecency.frecency({ workspace = "CWD" }) end,
         { desc = "Telescope frecency" }
       )
     end,

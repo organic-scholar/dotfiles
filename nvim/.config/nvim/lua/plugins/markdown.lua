@@ -12,12 +12,14 @@ return {
   -- },
   {
     "iamcco/markdown-preview.nvim",
-    branch = "v0.0.10",
-    build = function(path)
-      local app_dir = path .. "/app"
-      local res = vim.system({ "npm", "install" }, { cwd = app_dir }):wait()
-      if res.code ~= 0 then vim.notify((res.stderr or "unknown error"), vim.log.levels.ERROR) end
-    end,
+    tag = "v0.0.10",
+    build = "cd app && yarn install",
+    -- build = function() vim.fn["mkdp#util#install"]() end,
+    -- build = function(plugin)
+    --   local app_dir = plugin.dir .. "/app"
+    --   local res = vim.system({ "npm", "install" }, { cwd = app_dir }):wait()
+    --   if res.code ~= 0 then vim.notify((res.stderr or "unknown error"), vim.log.levels.ERROR) end
+    -- end,
     config = function()
       vim.g.mkdp_filetypes = { "markdown" }
       vim.keymap.set("n", "<leader>mp", function() vim.cmd.MarkdownPreview() end, { desc = "Markdown preview" })

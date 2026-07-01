@@ -1,7 +1,7 @@
 return {
   {
     "folke/flash.nvim",
-    branch = "v2.1.0",
+    tag = "v2.1.0",
     config = function()
       local map = vim.keymap.set
       require("flash").setup({})

@@ -2,7 +2,7 @@ return {
   {
     "NeogitOrg/neogit",
     branch = "master",
-    dependencies = { { "esmuellert/codediff.nvim", branch = "v2.43.15" } },
+    dependencies = { { "esmuellert/codediff.nvim", tag = "v2.49.2" } },
     config = function()
       local map = vim.keymap.set
       require("neogit").setup({ mappings = { status = { ["o"] = "Toggle" } } })

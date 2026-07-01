@@ -5,10 +5,11 @@ return {
   "node_modules/",
   "dist/",
   "build/",
-  ".next/",
-  ".nuxt/",
+  "%.next/",
+  "%.nuxt/",
   ".svelte%-kit/",
   "%.turbo/",
+  "%.yarn",
 
   -- Python
   "%.venv/",

@@ -1,7 +1,7 @@
 return {
   {
     "nvim-tree/nvim-tree.lua",
-    version = "1.17.0",
+    tag = "v1.18.0",
     lazy = false,
     keys = {
       { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
@@ -17,7 +17,7 @@ return {
       },
       filters = { git_ignored = false },
       actions = {
-        open_file = { quit_on_open = true },
+        -- open_file = { quit_on_open = true },
         change_dir = { restrict_above_cwd = true },
       },
       update_focused_file = {
@@ -34,6 +34,7 @@ return {
         end
         api.config.mappings.default_on_attach(bufnr)
         vim.keymap.set("n", "<CR>", api.tree.change_root_to_node, opts("CD"))
+        vim.keymap.set("n", "O", api.node.open.vertical, opts("Open: Vertical Split"))
         -- Free up f and F for flash.nvim
         vim.keymap.del("n", "f", { buffer = bufnr })
         vim.keymap.del("n", "F", { buffer = bufnr })
