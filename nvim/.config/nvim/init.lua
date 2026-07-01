@@ -6,6 +6,7 @@ require("config.filetype")
 require("config.keymap")
 require("config.autocmds")
 
+require("myplugin")
 require("init.lazy")
 
 --

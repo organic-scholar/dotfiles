@@ -22,6 +22,7 @@ keybinds clear-defaults=true {
         bind "Ctrl Shift t" { NewTab; }
         bind "Ctrl Shift h" { GoToPreviousTab; }
         bind "Ctrl Shift l" { GoToNextTab; }
+        bind "Ctrl Shift e" { EditScrollback; SwitchToMode "normal"; }
 
         bind "Ctrl h" {
             MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.3.0/vim-zellij-navigator.wasm" {
