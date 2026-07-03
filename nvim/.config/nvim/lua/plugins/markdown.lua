@@ -13,7 +13,7 @@ return {
   {
     "iamcco/markdown-preview.nvim",
     tag = "v0.0.10",
-    build = "cd app && yarn install",
+    build = "cd app && npm install",
     -- build = function() vim.fn["mkdp#util#install"]() end,
     -- build = function(plugin)
     --   local app_dir = plugin.dir .. "/app"

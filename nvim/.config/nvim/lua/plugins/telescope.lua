@@ -9,7 +9,7 @@ return {
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         branch = "main",
-        build = function(path) vim.system({ "make" }, { cwd = path }) end,
+        build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install",
       },
       { "nvim-telescope/telescope-frecency.nvim", branch = "master" },
     },
