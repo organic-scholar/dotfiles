@@ -24,11 +24,10 @@ map({ "n", "i" }, "<c-,>", "<cmd>split<CR>", { desc = "Horizontal Split" })
 -- map("n", "<leader>t", "<cmd>terminal<cr>", { desc = "New terminal" })
 map("t", "<Esc><Esc>", [[<C-\><C-n>]])
 
-map("n", "<leader>bd", "<cmd>bd<CR>", { desc = "Delete Buffer" })
+-- delete buffer
+map("n", "<leader>x", "<cmd>bd<CR>", { desc = "Delete Buffer" })
 
 map("n", "<leader>fn", function()
   local name = vim.fn.input("New file: ")
   vim.cmd("edit " .. name)
 end, { desc = "New file" })
-
-map("n", "<leader>bd", "<cmd>bd<CR>", { desc = "Delete Buffer" })

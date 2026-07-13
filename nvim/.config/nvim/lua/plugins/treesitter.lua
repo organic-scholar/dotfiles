@@ -5,7 +5,7 @@ return {
     -- run TSUpdate after installing/updating
     build = function() pcall(vim.cmd, "TSUpdate") end,
     config = function()
-      local parsers = { "helm", "terraform", "go", "rust" }
+      local parsers = { "helm", "terraform", "go", "rust", "jinja", "proto" }
       pcall(require("nvim-treesitter.install").ensure_installed, parsers)
 
       vim.api.nvim_create_autocmd("FileType", {

@@ -54,6 +54,12 @@ return {
         function() require("telescope").extensions.frecency.frecency({ workspace = "CWD" }) end,
         { desc = "Telescope frecency" }
       )
+      vim.keymap.set(
+        "n",
+        "<leader>,",
+        function() require("telescope").extensions.frecency.frecency({ workspace = "CWD" }) end,
+        { desc = "Telescope frecency" }
+      )
     end,
   },
 }

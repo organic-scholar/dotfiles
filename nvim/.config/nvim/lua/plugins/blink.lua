@@ -19,8 +19,10 @@ return {
         ["<Tab>"] = {
           function(cmp)
             if cmp.snippet_active() then return cmp.snippet_forward() end
-            return cmp.select_next({ on_ghost_text = true })
+            if cmp.is_visible() then return cmp.select_next() end
+            -- return cmp.select_next({ on_ghost_text = true })
           end,
+          "select_and_accept",
           "fallback",
         },
         ["<S-Tab>"] = {
@@ -30,7 +32,7 @@ return {
           "accept",
           "fallback",
         },
-        ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+        ["<C-/>"] = { "show", "show_documentation", "hide_documentation" },
         ["<CR>"] = { "select_and_accept", "fallback" },
         ["<Right>"] = { "select_and_accept", "accept", "fallback" },
       },
@@ -38,9 +40,9 @@ return {
       completion = {
         menu = { border = "rounded", auto_show = false, draw = { align_to = "cursor", treesitter = { "lsp" } } },
         trigger = { show_in_snippet = false },
-        list = { selection = { preselect = false, auto_insert = true } },
+        list = { selection = { preselect = true, auto_insert = false } },
         documentation = { auto_show = true, auto_show_delay_ms = 500, window = { border = "rounded" } },
-        ghost_text = { enabled = true, show_without_selection = true },
+        ghost_text = { enabled = true, show_without_selection = false },
       },
       sources = {
         default = { "snippets", "lsp", "path" },

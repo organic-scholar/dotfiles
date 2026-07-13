@@ -9,7 +9,7 @@ import = [
 [font]
 # normal = { family = "foobar", style = "Regular" }
 # bold = { family = "foobar", style = "Bold" }
-# offset = { x = 0, y = 0 }
+offset = { x = 0, y = 1 }
 # glyph_offset = { x = 0, y = 0 }
 # normal = { family = "AdwaitaMono Nerd Font", style = "Regular" }
 # 
@@ -62,8 +62,8 @@ regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:
 [keyboard]
 bindings = [
 { key = "v", mods = "Super", action = "Paste" },
-{ key = "c", mods = "Super", chars = "Copy" },
-]
+{ key = "c", mods = "Super", action = "Copy" },
+{key = "q", mods = "Control", chars = "abc" }]
 
 
 

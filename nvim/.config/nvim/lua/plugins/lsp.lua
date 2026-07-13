@@ -22,6 +22,8 @@ return {
           "jsonls",
           "pyrefly",
           "ts_ls",
+          "rust_analyzer",
+          "protols",
         },
       })
 
@@ -53,6 +55,12 @@ return {
         end,
         filetypes = { "yaml", "yaml.docker-compose" },
         settings = { yaml = { format = { enable = true, proseWrap = "preserve", printWidth = 120 } } },
+      })
+
+      vim.lsp.config("protols", {
+        cmd = { "protols" },
+        filetypes = { "proto" },
+        root_markers = { ".git", "protols.toml" },
       })
 
       vim.api.nvim_create_autocmd("LspAttach", {

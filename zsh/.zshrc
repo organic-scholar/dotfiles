@@ -20,7 +20,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 zi snippet OMZ::lib/key-bindings.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::vi-mode
-zinit snippet OMZP::sudo
+# zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
 zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
@@ -71,7 +71,6 @@ unsetopt BASH_AUTO_LIST
 # Key bindings
 bindkey '^I' autosuggest-accept
 bindkey '\x1f' fzf-tab-complete
-
 
 
 export EDITOR=nvim
