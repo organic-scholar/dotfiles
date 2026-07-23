@@ -27,6 +27,7 @@ return {
         },
       })
 
+      pcall(function() require("plugins.lsp.highlight") end)
       -- plugin-specific configs
       pcall(function() require("plugins.lsp.gopls") end)
 
