@@ -1,6 +1,7 @@
 # Variable definitions
 ZINIT_HOME="${HOME}/.local/share/zinit/zinit.git"
 ZSH_LIB="${HOME}/dotfiles/zsh/lib"
+export QMK_HOME="${HOME}/git/vial-qmk"
 
 # Source local libraries
 source "$ZSH_LIB/aliases.zsh"
@@ -19,7 +20,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Snippets and plugin configurations
 zi snippet OMZ::lib/key-bindings.zsh
 zinit snippet OMZP::git
-zinit snippet OMZP::vi-mode
+# zinit snippet OMZP::vi-mode
 # zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
 zinit snippet OMZP::aws
@@ -71,6 +72,8 @@ unsetopt BASH_AUTO_LIST
 # Key bindings
 bindkey '^I' autosuggest-accept
 bindkey '\x1f' fzf-tab-complete
+source "$ZSH_LIB/keymaps.zsh"
+
 
 
 export EDITOR=nvim
@@ -81,6 +84,8 @@ bindkey "^X^E" edit-command-line
 # Tool initializations (last)
 eval "$(starship init zsh)"
 # source <(fzf --zsh)
+
+
 
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)

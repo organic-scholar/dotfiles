@@ -1,0 +1,132 @@
+// Place your key bindings in this file to override the defaults
+[
+    // global navigation
+    // =================
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.focusSideBar",
+        "context": "editorFocus || panelFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "sideBarFocus || terminalFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.terminal.focus",
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "panelFocus"
+    },
+    {
+        "key": "shift+h",
+        "command": "workbench.action.previousEditor",
+        "when": "editorFocus && vim.mode == 'Normal'"
+    },
+    {
+        "key": "shift+l",
+        "command": "workbench.action.nextEditor",
+        "when": "editorFocus && vim.mode == 'Normal'"
+    },
+    // panel navigation
+    {
+        "key": "shift+h",
+        "command": "workbench.action.previousPanelView",
+        "when": "panelFocus"
+    },
+    {
+        "key": "shift+l",
+        "command": "workbench.action.nextPanelView",
+        "when": "panelFocus"
+    },
+    // terminal navigation
+    {
+        "key": "shift+j",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "shift+k",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
+    // terminal panel
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalFocus"
+    },
+    // sidebar
+    // =======
+    {
+        "key": "r",
+        "command": "renameFile",
+        "when": "sideBarFocus && explorerViewletFocus && !inputFocus",
+    },
+    {
+        "key": "n",
+        "command": "explorer.newFile",
+        "when": "sideBarFocus && explorerViewletFocus && !inputFocus",
+    },
+    {
+        "key": "d",
+        "command": "deleteFile",
+        "when": "sideBarFocus && explorerViewletFocus && !inputFocus",
+    },
+    {
+        "key": "o",
+        "command": "explorer.openAndPassFocus",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus && !explorerResourceIsFolder"
+    },
+    // completion
+    // ==========
+    {
+        "key": "ctrl+j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetVisible"
+    },
+    // shell sequences
+    // ===============
+    {
+        "key": "shift+home",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u001b[1;2H"
+        },
+        "when": "terminalFocus"
+    },
+    // shift+home macos sequence
+    {
+        "key": "cmd+shift+left",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u001b[1;2H"
+        },
+        "when": "terminalFocus"
+    },
+    {
+        "key": "shift+end",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u001b[1;2F"
+        },
+        "when": "terminalFocus"
+    },
+    // shift+end macos sequence
+    {
+        "key": "cmd+shift+right",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u001b[1;2F"
+        },
+        "when": "terminalFocus"
+    }
+]

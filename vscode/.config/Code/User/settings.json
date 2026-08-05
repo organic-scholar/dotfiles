@@ -1,0 +1,452 @@
+{
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "storage.type",
+                    "variable.parameter",
+                    "parameters variable.function",
+                    "support.type",
+                    "storage.modifier",
+                    "entity.other.inherited-class",
+                    "entity.other.attribute-name"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            }
+        ]
+    },
+    "editor.inlayHints.enabled": "off",
+    "git.ignoreMissingGitWarning": true,
+    "editor.minimap.enabled": false,
+    "files.autoSave": "onFocusChange",
+    "search.exclude": {
+        "**/__pycache__": true,
+        "**/.mypy_cache": true,
+        "**/.next": true,
+        "**/.pytest_cache": true,
+        "**/.venv": true,
+        "**/.yarn": true,
+        "**/android": true,
+        "**/bower_components": true,
+        "**/build": true,
+        "**/cdk.out": true,
+        "**/dist": true,
+        "**/ios": true,
+        "**/node_modules": true,
+        "**/.git": true,
+        "**/.pnpm-store": true
+    },
+    "emulator.emulatorPath": "/Volumes/Storage/Android/sdk/emulator",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "nativescript.analytics.enabled": false,
+    "materialTheme.autoApplyIcons": false,
+    "cSpell.userWords": [
+        "activedirectory",
+        "aegiszones",
+        "Algolia",
+        "alsa",
+        "argocd",
+        "argoproj",
+        "azuread",
+        "blockdevices",
+        "cenkalti",
+        "chdir",
+        "checkupdates",
+        "chrono",
+        "cicd",
+        "clamav",
+        "clamd",
+        "cognito",
+        "contextpath",
+        "controlplane",
+        "crds",
+        "creds",
+        "crossplane",
+        "deadpool",
+        "deinit",
+        "devcontainers",
+        "devctl",
+        "dnsmasq",
+        "dotenv",
+        "encryptor",
+        "endfor",
+        "fdesetup",
+        "filevault",
+        "firestore",
+        "fullname",
+        "gerrit",
+        "graphql",
+        "infranet",
+        "infrastruct",
+        "jasypt",
+        "jcasc",
+        "jsondecode",
+        "jumphost",
+        "keygen",
+        "keypair",
+        "kubeconfig",
+        "kubeoven",
+        "kubespray",
+        "kustomise",
+        "Kustomization",
+        "kustomize",
+        "letsencrypt",
+        "levelname",
+        "libc",
+        "libfprint",
+        "libgjs",
+        "mdatp",
+        "minijinja",
+        "mountpoint",
+        "mountpoints",
+        "nordix",
+        "nvme",
+        "onap",
+        "openstackclient",
+        "pacman",
+        "pipefail",
+        "Pixi",
+        "pydantic",
+        "qwik",
+        "rabbitmq",
+        "readonly",
+        "referenceable",
+        "remrem",
+        "selectattr",
+        "servlet",
+        "softwareupdate",
+        "springframework",
+        "SQLALCHEMY",
+        "sqlx",
+        "subnav",
+        "Summernote",
+        "swal",
+        "sweetalert",
+        "templatefile",
+        "templating",
+        "thiserror",
+        "tmpl",
+        "traefik",
+        "Unmount",
+        "upbound",
+        "urandom",
+        "urlsplit",
+        "Vali",
+        "vgubuntu",
+        "xerces",
+        "xpkg",
+        "yamlencode"
+    ],
+    "breadcrumbs.enabled": false,
+    "files.autoSaveDelay": 10000,
+    "terminal.integrated.commandsToSkipShell": [
+        "workbench.action.focusSideBar"
+    ],
+    "[jinja]": {},
+    "workbench.iconTheme": "vscode-icons",
+    "[mako]": {},
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.mypy_cache": true,
+        "**/.pytest_cache": true,
+        "**/.zig-cache": true
+    },
+    "todo-tree.tree.showScanModeButton": false,
+    "python.languageServer": "Pylance",
+    "emmet.includeLanguages": {
+        "jinja-html": "html"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "go.formatTool": "goimports",
+    "rust.all_features": true,
+    "rust-analyzer.inlayHints.enable": false,
+    "rust-analyzer.inlayHints.chainingHints": false,
+    "vs-kubernetes": {
+        "vs-kubernetes.minikube-path.mac": "/Users/nauman/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
+        "vscode-kubernetes.minikube-path.mac": "/Users/nauman/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
+        "vs-kubernetes.minikube-show-information-expiration": "2025-07-14T20:14:30.504Z",
+        "vs-kubernetes.crd-code-completion": "disabled"
+    },
+    "explorer.confirmDelete": false,
+    "files.watcherExclude": {
+        "**/node_modules": true,
+        "**/.git": true,
+        "**/.ammonite": true,
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.mypy_cache": true,
+        "**/.next": true,
+        "**/.pytest_cache": true,
+        "**/.zig-cache": true,
+        "**/build": true,
+        "**/.pnpm-store": true
+    },
+    "window.nativeTabs": true,
+    "terminal.integrated.lineHeight": 0,
+    "editor.lineHeight": 22,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "vsicons.dontShowNewVersionMessage": true,
+    "go.toolsManagement.autoUpdate": true,
+    "redhat.telemetry.enabled": false,
+    "editor.cursorStyle": "line",
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "vim.leader": ",",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "f"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ],
+        },
+        {
+            "before": [
+                "<leader>",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.files.save"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "q"
+            ],
+            "commands": [
+                "workbench.action.closeActiveEditor"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "r"
+            ],
+            "commands": [
+                "fileutils.renameFile"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "n"
+            ],
+            "commands": [
+                "fileutils.newFile"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "t"
+            ],
+            "commands": [
+                "workbench.action.togglePanel"
+            ]
+        },
+        {
+            "before": [
+                "s"
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "f"
+            ]
+        },
+        {
+            "before": [
+                "S"
+            ],
+            "after": [
+                "<leader>",
+                "<leader>",
+                "F"
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ">"
+            ],
+            "after": [
+                ">",
+                "g",
+                "v"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "after": [
+                "<",
+                "g",
+                "v"
+            ]
+        }
+    ],
+    "cmake.configureOnOpen": true,
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": "off"
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "search.useGlobalIgnoreFiles": true,
+    "json.schemas": [],
+    "json.schemaDownload.enable": false,
+    "yaml.schemas": {},
+    "yaml.schemaStore.enable": false,
+    "[python]": {
+        "editor.wordBasedSuggestions": "off",
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.analysis.typeCheckingMode": "basic",
+    "editor.renderWhitespace": "trailing",
+    "rust-analyzer.cargo.noDefaultFeatures": true,
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
+    "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "never",
+    "editor.fontFamily": "Google Sans Code NF",
+    "[dart][python]": {
+        "editor.wordBasedSuggestions": "off"
+    },
+    "remote.autoForwardPortsSource": "hybrid",
+    "vim.useSystemClipboard": true,
+    "gopls": {
+        "ui.semanticTokens": true
+    },
+    "graphql-config.dotEnvPath": "",
+    "explorer.compactFolders": false,
+    "workbench.startupEditor": "none",
+    "workbench.activityBar.location": "top",
+    "workbench.editor.editorActionsLocation": "hidden",
+    "rust-analyzer.runnables.extraTestBinaryArgs": [
+        "--show-output",
+        "--nocapture"
+    ],
+    "zig.zls.enabled": "on",
+    "zig.zls.zigLibPath": "/home/nauman/.local/share/mise/installs/zig/latest/lib",
+    "zig.path": "/home/nauman/.local/share/mise/installs/zig/latest/bin/zig",
+    "C_Cpp.errorSquiggles": "enabled",
+    "mesonbuild.downloadLanguageServer": true,
+    "lldb.suppressUpdateNotifications": true,
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "cmake.options.statusBarVisibility": "icon",
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "editor.formatOnSave": true,
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.clang_format_sortIncludes": true,
+    "html.format.templating": true,
+    "html.format.wrapAttributes": "preserve-aligned",
+    "remote.autoForwardPorts": false,
+    "window.commandCenter": false,
+    "window.menuBarVisibility": "toggle",
+    "ansible.lightspeed.enabled": false,
+    "autopep8.args": [
+        "--max-line-length=100"
+    ],
+    "docker.extension.enableComposeLanguageServer": false,
+    "window.customTitleBarVisibility": "never",
+    "keyboard.dispatch": "keyCode",
+    // tab completions
+    // "editor.tabCompletion": "on",
+    // "editor.suggestOnTriggerCharacters": true,
+    "rust-analyzer.check.command": "check",
+    "task.allowAutomaticTasks": "on",
+    "editor.acceptSuggestionOnCommitCharacter": true,
+    // "editor.suggestSelection": "first",
+    "editor.tabCompletion": "on",
+    // "editor.quickSuggestions": {
+    //     "other": "off",
+    //     "comments": "off",
+    //     "strings": "off"
+    // },
+    "editor.suggestOnTriggerCharacters": false,
+    "emmet.triggerExpansionOnTab": true,
+    "chat.viewSessions.orientation": "stacked",
+    "workbench.colorTheme": "Tomorrow Night",
+    "workbench.colorCustomizations": {
+        "[Vira*]": {
+            "statusBar.debuggingBackground": "#80CBC433",
+            "statusBar.debuggingForeground": "#80CBC4",
+            "toolbar.activeBackground": "#80CBC426",
+            "button.background": "#80CBC4",
+            "button.hoverBackground": "#80CBC4cc",
+            "extensionButton.separator": "#80CBC433",
+            "extensionButton.background": "#80CBC414",
+            "extensionButton.foreground": "#80CBC4",
+            "extensionButton.hoverBackground": "#80CBC433",
+            "extensionButton.prominentForeground": "#80CBC4",
+            "extensionButton.prominentBackground": "#80CBC414",
+            "extensionButton.prominentHoverBackground": "#80CBC433",
+            "activityBarBadge.background": "#80CBC4",
+            "activityBar.activeBorder": "#80CBC4",
+            "activityBarTop.activeBorder": "#80CBC4",
+            "list.inactiveSelectionIconForeground": "#80CBC4",
+            "list.activeSelectionForeground": "#80CBC4",
+            "list.inactiveSelectionForeground": "#80CBC4",
+            "list.highlightForeground": "#80CBC4",
+            "sash.hoverBorder": "#80CBC480",
+            "list.activeSelectionIconForeground": "#80CBC4",
+            "scrollbarSlider.activeBackground": "#80CBC480",
+            "editorSuggestWidget.highlightForeground": "#80CBC4",
+            "textLink.foreground": "#80CBC4",
+            "progressBar.background": "#80CBC4",
+            "pickerGroup.foreground": "#80CBC4",
+            "tab.activeBorder": "#80CBC4",
+            "tab.activeBorderTop": "#80CBC400",
+            "tab.unfocusedActiveBorder": "#80CBC4",
+            "tab.unfocusedActiveBorderTop": "#80CBC400",
+            "tab.activeModifiedBorder": "#80CBC400",
+            "notificationLink.foreground": "#80CBC4",
+            "editorWidget.resizeBorder": "#80CBC4",
+            "editorWidget.border": "#80CBC4",
+            "settings.modifiedItemIndicator": "#80CBC4",
+            "panelTitle.activeBorder": "#80CBC4",
+            "breadcrumb.activeSelectionForeground": "#80CBC4",
+            "menu.selectionForeground": "#80CBC4",
+            "menubar.selectionForeground": "#80CBC4",
+            "editor.findMatchBorder": "#80CBC4",
+            "selection.background": "#80CBC440",
+            "statusBarItem.remoteBackground": "#80CBC414",
+            "statusBarItem.remoteHoverBackground": "#80CBC4",
+            "statusBarItem.remoteForeground": "#80CBC4",
+            "notebook.inactiveFocusedCellBorder": "#80CBC480",
+            "chat.slashCommandForeground": "#80CBC4",
+            "chat.avatarForeground": "#80CBC4",
+            "activityBarBadge.foreground": "#000000",
+            "button.foreground": "#000000",
+            "statusBarItem.remoteHoverForeground": "#000000"
+        }
+    },
+    "editor.smoothScrolling": true,
+    "makefile.configureOnOpen": true,
+    "workbench.experimental.modernUI": true,
+}

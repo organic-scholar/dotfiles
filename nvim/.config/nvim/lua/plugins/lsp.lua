@@ -24,6 +24,7 @@ return {
           "ts_ls",
           "rust_analyzer",
           "protols",
+          "postgres_lsp",
         },
       })
 
