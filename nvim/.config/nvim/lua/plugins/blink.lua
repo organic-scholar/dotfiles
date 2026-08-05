@@ -46,6 +46,9 @@ return {
       },
       sources = {
         default = { "snippets", "lsp", "path" },
+        per_filetype = {
+          markdown = { "lsp", "path" }, -- Exclude "snippets" here
+        },
 
         providers = { snippets = { opts = { friendly_snippets = true, extended_filetypes = {} } } },
       },

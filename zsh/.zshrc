@@ -26,7 +26,6 @@ zinit snippet OMZP::archlinux
 zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
-zinit snippet OMZP::command-not-found
 
 # Completions
 zinit light zsh-users/zsh-completions
@@ -71,6 +70,7 @@ unsetopt BASH_AUTO_LIST
 
 # Key bindings
 bindkey '^I' autosuggest-accept
+# bindkey '^I' forward-word
 bindkey '\x1f' fzf-tab-complete
 source "$ZSH_LIB/keymaps.zsh"
 
@@ -81,13 +81,16 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
+export KUBECTL_EXTERNAL_DIFF="dyff between --omit-header --set-exit-code"
+
 # Tool initializations (last)
 eval "$(starship init zsh)"
 # source <(fzf --zsh)
 
-
+alias docker=podman
 
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/home/nauman/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+#
