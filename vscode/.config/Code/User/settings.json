@@ -139,7 +139,6 @@
         "xpkg",
         "yamlencode"
     ],
-    "breadcrumbs.enabled": false,
     "files.autoSaveDelay": 10000,
     "terminal.integrated.commandsToSkipShell": [
         "workbench.action.focusSideBar"
@@ -390,8 +389,7 @@
     // },
     "editor.suggestOnTriggerCharacters": false,
     "emmet.triggerExpansionOnTab": true,
-    "chat.viewSessions.orientation": "stacked",
-    "workbench.colorTheme": "Tomorrow Night",
+    "workbench.colorTheme": "Tokyo Night",
     "workbench.colorCustomizations": {
         "[Vira*]": {
             "statusBar.debuggingBackground": "#80CBC433",
@@ -449,4 +447,5 @@
     "editor.smoothScrolling": true,
     "makefile.configureOnOpen": true,
     "workbench.experimental.modernUI": true,
+    "chat.viewSessions.orientation": "stacked",
 }
