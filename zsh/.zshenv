@@ -5,3 +5,4 @@ source "$HOME/dotfiles/zsh/lib/paths.zsh"
 # Initialize mise (sourced by ALL zsh shells, including non-interactive ones)
 eval "$(mise activate zsh)"
 
+. "$HOME/.cargo/env"

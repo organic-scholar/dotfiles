@@ -32,27 +32,27 @@
         "when": "editorFocus && vim.mode == 'Normal'"
     },
     // panel navigation
-    {
-        "key": "shift+h",
-        "command": "workbench.action.previousPanelView",
-        "when": "panelFocus"
-    },
-    {
-        "key": "shift+l",
-        "command": "workbench.action.nextPanelView",
-        "when": "panelFocus"
-    },
+    // {
+    //     "key": "shift+h",
+    //     "command": "workbench.action.previousPanelView",
+    //     "when": "panelFocus"
+    // },
+    // {
+    //     "key": "shift+l",
+    //     "command": "workbench.action.nextPanelView",
+    //     "when": "panelFocus"
+    // },
     // terminal navigation
-    {
-        "key": "shift+j",
-        "command": "workbench.action.terminal.focusNext",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "shift+k",
-        "command": "workbench.action.terminal.focusPrevious",
-        "when": "terminalFocus"
-    },
+    // {
+    //     "key": "shift+j",
+    //     "command": "workbench.action.terminal.focusNext",
+    //     "when": "terminalFocus"
+    // },
+    // {
+    //     "key": "shift+k",
+    //     "command": "workbench.action.terminal.focusPrevious",
+    //     "when": "terminalFocus"
+    // },
     // terminal panel
     {
         "key": "ctrl+n",
