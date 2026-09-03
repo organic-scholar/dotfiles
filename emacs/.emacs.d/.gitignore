@@ -1,0 +1,28 @@
+# Installed packages and native compilation cache.
+/elpa/
+/eln-cache/
+
+# Generated Emacs state.
+/auto-save-list/
+/var/
+/eshell/
+/url/
+/tramp
+/history
+/recentf
+/bookmarks
+/custom.el
+/network-security.data
+/places
+/savehist
+/saveplace
+/transient/
+/tree-sitter/
+
+# Generated Projectile state.
+/projectile-bookmarks.eld
+/projectile-frecency.eld
+
+# Editor backup and auto-save files.
+*~
+\#*\#
