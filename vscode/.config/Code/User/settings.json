@@ -461,4 +461,7 @@
     "makefile.configureOnOpen": true,
     "workbench.experimental.modernUI": true,
     "chat.viewSessions.orientation": "stacked",
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorBlinking": true,
+    "breadcrumbs.enabled": false,
 }
