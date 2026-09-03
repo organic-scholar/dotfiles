@@ -13,6 +13,7 @@
 (require 'init-editing)
 (require 'init-cua)
 (require 'init-keymap)
+(require 'init-search)
 (require 'init-completion)
 (require 'init-git)
 (require 'init-rust)
