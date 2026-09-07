@@ -1,4 +1,4 @@
-
+;;; init-keymap.el --- Global keybindings -*- lexical-binding: t; -*-
 
 (global-set-key (kbd "<escape>") #'keyboard-quit)
 (define-key ctl-x-map (kbd "<escape>") #'keyboard-quit)
@@ -21,5 +21,9 @@
 (global-set-key (kbd "s-c") #'kill-ring-save)
 (global-set-key (kbd "s-x") #'kill-region)
 (global-set-key (kbd "s-v") #'yank)
+
+;; macOS document navigation: Command-Up/Down jump to buffer start/end.
+(global-set-key (kbd "s-<up>") #'beginning-of-buffer)
+(global-set-key (kbd "s-<down>") #'end-of-buffer)
 
 (provide 'init-keymap)

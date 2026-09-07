@@ -4,6 +4,7 @@
 
 (use-package doom-themes
   :demand t
+  :ensure t
   :config
   (load-theme 'doom-tomorrow-night t)
   (doom-themes-org-config)

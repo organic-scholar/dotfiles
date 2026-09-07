@@ -18,6 +18,18 @@
       desktop-restore-frames t
       desktop-auto-save-timeout 300)
 
+;; Never save or restore appearance parameters in the frameset so the active
+;; theme controls colors.  Otherwise a session captured under a light theme
+;; restores a white background that overrides the current theme.
+(require 'frameset)
+(setq frameset-filter-alist
+      (append '((foreground-color . :never)
+                (background-color . :never)
+                (background-mode  . :never)
+                (cursor-color     . :never)
+                (ns-appearance    . :never))
+              frameset-filter-alist))
+
 (desktop-save-mode 1)
 
 (provide 'init-desktop)

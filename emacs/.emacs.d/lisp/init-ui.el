@@ -1,14 +1,11 @@
 ;;; init-ui.el --- Personal UI settings -*- lexical-binding: t; -*-
 
-;; Disable the menu bar in the current frame and in future GUI frames.
-;; (menu-bar-mode -1)
-;; (add-to-list 'default-frame-alist '(menu-bar-lines . 0))
-;; (add-to-list 'initial-frame-alist '(menu-bar-lines . 0))
-
 ;; Disable the icon toolbar in the current frame and in future GUI frames.
-;; (tool-bar-mode -1)
-;; (add-to-list 'default-frame-alist '(tool-bar-lines . 0))
-;; (add-to-list 'initial-frame-alist '(tool-bar-lines . 0))
+(tool-bar-mode -1)
+(add-to-list 'default-frame-alist '(tool-bar-lines . 0))
+(add-to-list 'initial-frame-alist '(tool-bar-lines . 0))
+
+(which-key-mode 1)   ;; Enable which-key mode
 
 ;; Keep buffers in sync when their files change outside Emacs.
 (setq auto-revert-verbose nil
@@ -27,13 +24,13 @@
 ;;; font.el --- Personal font configuration -*- lexical-binding: t; -*-
 
 (defconst my-default-font-family "Google Sans Code NF") 
-(defconst my-default-font-size 11)
+(defconst my-default-font-size 13)
 
 ;; Apply the font to frames created later, including daemon/client frames.
 (add-to-list 'default-frame-alist
              `(font . ,(format "%s-%d"
-                              my-default-font-family
-                              my-default-font-size)))
+                               my-default-font-family
+                               my-default-font-size)))
 
 ;; Add a little vertical space between lines.
 (setq-default line-spacing 0.15)
@@ -47,27 +44,39 @@
 
 (require 'pixel-scroll)
 
+(setq scroll-conservatively 101
+      scroll-margin 10
+      scroll-step 1
+      scroll-preserve-screen-position t
+      fast-but-imprecise-scrolling nil)
+
 (setq pixel-scroll-precision-interpolation-total-time 0.10)
 (pixel-scroll-precision-mode 1)
 
+;; Page Up/Down move point along with the view (unlike the mouse wheel,
+;; which scrolls without moving the cursor).
 (defun my-scroll-half-page-down ()
   (interactive)
-  (if (display-graphic-p)
-      (pixel-scroll-precision-interpolate
-       (- (/ (window-text-height nil t) 2)) nil 1)
-    (scroll-up-command (/ (window-body-height) 2))))
+  (let ((lines (/ (window-body-height) 2)))
+    (if (display-graphic-p)
+        (pixel-scroll-precision-interpolate
+         (- (/ (window-text-height nil t) 2)) nil 1)
+      (scroll-up-command lines))
+    (forward-line lines)))
 
 (defun my-scroll-half-page-up ()
   (interactive)
-  (if (display-graphic-p)
-      (pixel-scroll-precision-interpolate
-       (/ (window-text-height nil t) 2) nil 1)
-    (scroll-down-command (/ (window-body-height) 2))))
+  (let ((lines (/ (window-body-height) 2)))
+    (if (display-graphic-p)
+        (pixel-scroll-precision-interpolate
+         (/ (window-text-height nil t) 2) nil 1)
+      (scroll-down-command lines))
+    (forward-line (- lines))))
 
 (with-eval-after-load 'pixel-scroll
   (define-key pixel-scroll-precision-mode-map (kbd "<next>")
-    #'my-scroll-half-page-down)
+	      #'my-scroll-half-page-down)
   (define-key pixel-scroll-precision-mode-map (kbd "<prior>")
-    #'my-scroll-half-page-up))
+	      #'my-scroll-half-page-up))
 
 (provide 'init-ui)

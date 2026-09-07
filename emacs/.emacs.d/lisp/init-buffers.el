@@ -1,3 +1,5 @@
+;;; init-buffers.el --- Buffer helpers -*- lexical-binding: t; -*-
+
 (defun init/kill-current-buffer ()
   "Save the current file buffer, then kill it."
   (interactive)

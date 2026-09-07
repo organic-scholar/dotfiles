@@ -1,3 +1,5 @@
+;;; init-projects.el --- Project navigation -*- lexical-binding: t; -*-
+
 ;; Project navigation with Projectile.
 (require 'use-package)
 

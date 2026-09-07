@@ -1,3 +1,5 @@
+;;; init-files.el --- File history and state -*- lexical-binding: t; -*-
+
 (require 'recentf)
 (require 'savehist)
 

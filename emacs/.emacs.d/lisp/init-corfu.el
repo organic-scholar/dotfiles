@@ -21,7 +21,7 @@
 
 (defun init-corfu-nerd-icons-formatter (metadata)
   "Format Corfu icons with a full space separating them from candidates."
-  (when-let ((formatter (nerd-icons-corfu-formatter metadata)))
+  (when-let* ((formatter (nerd-icons-corfu-formatter metadata)))
     (lambda (candidate)
       (let ((nerd-icons-corfu--space " "))
         (funcall formatter candidate)))))

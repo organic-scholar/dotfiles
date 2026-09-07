@@ -1,6 +1,9 @@
+;;; init-copilot.el --- GitHub Copilot setup -*- lexical-binding: t; -*-
+
 (use-package copilot
   :ensure t
-  :hook (prog-mode . copilot-mode)
+  :hook ((prog-mode . copilot-mode)
+         (prog-mode . copilot-nes-mode))
   :config
   (keymap-set copilot-completion-map "C-<tab>" #'copilot-accept-completion-by-word)
   (keymap-set copilot-completion-map "<right>" #'copilot-accept-completion)

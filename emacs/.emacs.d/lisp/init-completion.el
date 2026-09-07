@@ -1,3 +1,5 @@
+;;; init-completion.el --- Minibuffer completion -*- lexical-binding: t; -*-
+
 ;; Prelude-style minibuffer completion.
 (require 'use-package)
 
