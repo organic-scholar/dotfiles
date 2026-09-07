@@ -13,15 +13,16 @@
   
   ;; `copilot.el' cannot infer these tree-sitter modes' indentation width.
   ;; Supplying it keeps ghost-text suggestions aligned with our formatting.
-  (add-to-list 'copilot-indentation-alist '(prog-mode . 2))
-  (add-to-list 'copilot-indentation-alist '(org-mode . 2))
-  (add-to-list 'copilot-indentation-alist '(text-mode . 2))
-  (add-to-list 'copilot-indentation-alist '(closure-mode . 2))
-  (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode . 2))
+  (add-to-list 'copilot-indentation-alist '(prog-mode 2))
+  (add-to-list 'copilot-indentation-alist '(org-mode 2))
+  (add-to-list 'copilot-indentation-alist '(text-mode 2))
+  (add-to-list 'copilot-indentation-alist '(closure-mode 2))
+  (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2))
   ;; Suppress Copilot's fallback-to-`tab-width' diagnostic for modes that
   ;; do not expose a mode-specific indentation offset.
   ;; add-to-list 'warning-suppress-types '(copilot copilot-no-mode-indent)))
   )
+
 
 (dolist (command '(copilot-chat-compose
                    copilot-chat-send

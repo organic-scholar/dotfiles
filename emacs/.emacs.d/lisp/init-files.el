@@ -5,9 +5,10 @@
 (savehist-mode 1)
 (recentf-mode 1)
 
+
 (defvar-keymap my/project-file-command-map
   "f" #'projectile-find-file
-  "b" #'projectile-switch-to-buffer
+  "b" #'consult-project-buffer
   "r" #'projectile-recentf
   "d" #'projectile-dired
   "g" #'projectile-grep

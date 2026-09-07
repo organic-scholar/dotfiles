@@ -1,3 +1,4 @@
+
 ;;; cua.el --- Personal CUA configuration -*- lexical-binding: t; -*-
 
 (cua-mode 1)

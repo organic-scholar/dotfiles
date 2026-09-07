@@ -17,4 +17,9 @@
 (global-set-key (kbd "s-z") #'undo-only)
 (global-set-key (kbd "s-Z") #'undo-redo)
 
+;; Conventional macOS clipboard shortcuts (Command maps to `super').
+(global-set-key (kbd "s-c") #'kill-ring-save)
+(global-set-key (kbd "s-x") #'kill-region)
+(global-set-key (kbd "s-v") #'yank)
+
 (provide 'init-keymap)

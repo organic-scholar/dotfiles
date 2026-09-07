@@ -395,12 +395,6 @@
     "editor.acceptSuggestionOnCommitCharacter": true,
     // "editor.suggestSelection": "first",
     "editor.tabCompletion": "on",
-    // "editor.quickSuggestions": {
-    //     "other": "off",
-    //     "comments": "off",
-    //     "strings": "off"
-    // },
-    "editor.suggestOnTriggerCharacters": false,
     "emmet.triggerExpansionOnTab": true,
     "workbench.colorTheme": "Tokyo Night",
     "workbench.colorCustomizations": {
@@ -464,4 +458,9 @@
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorBlinking": true,
     "breadcrumbs.enabled": false,
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "off",
+        "strings": "off"
+    },
 }

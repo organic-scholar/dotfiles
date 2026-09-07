@@ -13,26 +13,25 @@
 ;;             #'completion-preview-prev-candidate)
 ;; (keymap-set completion-preview-active-mode-map "M-<tab>"
 ;;             #'completion-preview-prev-candidate)
-(keymap-set completion-preview-active-mode-map "<tab>"
-            #'completion-preview-insert)
+;; (keymap-set completion-preview-active-mode-map "<tab>"
+;;             #'completion-preview-insert)
 
-;; Keep focus in the source buffer while navigating a visible completion list.
-(setq completion-in-region-mode-predicate
-      (lambda () (derived-mode-p 'prog-mode)))
-(keymap-set completion-in-region-mode-map "<tab>"
-            #'minibuffer-next-completion)
-(keymap-set completion-in-region-mode-map "M-<tab>"
-            #'minibuffer-previous-completion)
-(keymap-set completion-in-region-mode-map "RET"
-            #'minibuffer-choose-completion)
+;; ;; Keep focus in the source buffer while navigating a visible completion list.
+;; (setq completion-in-region-mode-predicate
+;;       (lambda () (derived-mode-p 'prog-mode)))
+;; (keymap-set completion-in-region-mode-map "<tab>"
+;;             #'minibuffer-next-completion)
+;; (keymap-set completion-in-region-mode-map "M-<tab>"
+;;             #'minibuffer-previous-completion)
+;; (keymap-set completion-in-region-mode-map "RET"
+;;             #'minibuffer-choose-completion)
 
+;; (defun init-completion-bind-tab ()
+;;   "Use TAB for completion in programming buffers."
+;;   (keymap-local-set "C-c TAB" #'completion-at-point)
+;;   (keymap-local-set "C-c <tab>" #'completion-at-point))
 
-(defun init-completion-bind-tab ()
-  "Use TAB for completion in programming buffers."
-  (keymap-local-set "C-c TAB" #'completion-at-point)
-  (keymap-local-set "C-c <tab>" #'completion-at-point))
-
-(add-hook 'prog-mode-hook #'init-completion-bind-tab)
+;; (add-hook 'prog-mode-hook #'init-completion-bind-tab)
 
 ;; Show candidates vertically and rank recently used commands first.
 (use-package vertico
