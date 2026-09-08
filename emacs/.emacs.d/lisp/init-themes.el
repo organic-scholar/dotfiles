@@ -13,7 +13,10 @@
   (set-face-attribute 'header-line nil
                       :background (face-background 'default)
                       :foreground (face-foreground 'default)
-                      :box nil))
+                      :box nil)
+  (set-face-attribute 'window-divider nil
+                      :background (doom-color 'base4)
+                      :foreground (doom-color 'base4)))
 
 ;; (use-package base16-theme
 ;;   :ensure t

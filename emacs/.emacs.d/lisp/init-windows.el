@@ -5,10 +5,6 @@
 (use-package ace-window
   :ensure t)
 
-(provide 'init-windows)
-;;; init-windows.el ends here
-
-
 (defun my/window-resize-left ()
   "Move the relevant vertical window divider left."
   (interactive)
@@ -73,4 +69,7 @@
 (scroll-bar-mode -1)
 
 (add-to-list 'default-frame-alist
-        '(vertical-scroll-bars . nil))
+             '(vertical-scroll-bars . nil))
+
+(provide 'init-windows)
+;;; init-windows.el ends here

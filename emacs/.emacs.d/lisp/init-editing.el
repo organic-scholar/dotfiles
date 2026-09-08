@@ -2,12 +2,6 @@
 
 (electric-pair-mode 1)
 
-(use-package super-save
-  :ensure t
-  :demand t
-  :config
-  (super-save-mode 1))
-
 (defun init/backward-kill-word-or-line (arg)
   "Delete backward ARG times using VS Code-like boundaries."
   (interactive "p")

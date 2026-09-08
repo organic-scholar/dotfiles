@@ -27,8 +27,9 @@ renamed tab remains unchanged because `tab-bar-rename-tab' stores its name."
   "q" #'tab-bar-close-tab
   "u" #'tab-bar-undo-close-tab)
 
-;; `prelude-mode' otherwise assigns C-c t to its terminal command.
-(define-key global-map (kbd "C-c t") my/tab-bar-command-map)
+;; Keep tab-bar commands under C-c followed by Tab.
+;;(keymap-unset global-map "C-c t")
+(keymap-set global-map "C-c TAB" my/tab-bar-command-map)
 
 (provide 'init-tabs)
 ;;; tabs.el ends here

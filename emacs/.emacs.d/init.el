@@ -2,12 +2,14 @@
 
 (print "Hello, World!")
 
+(setq load-prefer-newer t)
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
-(require 'init-ui)
 (require 'init-package)
 (require 'init-no-littering)
+(require 'init-ui)
+(require 'init-themes)
 (require 'init-header-line)
 (require 'init-buffers)
 (require 'init-windows)
@@ -32,7 +34,6 @@
 (require 'init-vterm)
 (require 'init-spell)
 (require 'init-tabs)
-(require 'init-themes)
 (require 'init-desktop)
 (require 'init-copilot)
 (custom-set-variables

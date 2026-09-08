@@ -12,8 +12,7 @@
   (keymap-set eshell-hist-mode-map "C-p" #'eshell-previous-input)
   (keymap-set eshell-hist-mode-map "C-n" #'eshell-next-input))
 
-(define-key global-map (kbd "C-c T") my/shell-command-map)
+(define-key global-map (kbd "C-c t") my/shell-command-map)
 
 (provide 'init-shell)
 ;;; shell.el ends here
-
