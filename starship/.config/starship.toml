@@ -3,14 +3,12 @@
 
 format = """
 $directory\
-$git_branch\
-$git_commit\
-$git_state\
-$git_status\
+$git_branch$git_commit$git_state\
 $python\
 $sudo\
 $aws\
 $kubernetes\
+$terraform\
 $cmd_duration\
 $line_break\
 $jobs\
@@ -27,13 +25,35 @@ error_symbol = '[\$](bold red)'
 vimcmd_symbol = '[](bold green)'
 
 
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style) "
+truncation_length = 1
+
+[git_branch]
+format = "[$symbol\\($branch(:$remote_branch)\\)]($style) "
+symbol = ""
+
+[python]
+format = "[${symbol} ${pyenv_prefix}(${version} )(\\($virtualenv\\) )]($style)"
+
+[sudo]
+format = "[$symbol] ($style)"
+
+[cmd_duration]
+format = "took [$duration]($style)"
+
 [aws]
 # format = 'on [$symbol$profile]($style)'
-format = 'on [$symbol($profile)]($style) '
+format = "[$symbol\\($profile\\)]($style) "
 style = 'fg:208'
-symbol = '☁️ '
+symbol = " "
 
 [kubernetes]
-format = 'at [$symbol$context(\($namespace\))]($style) '
+format = "[$symbol\\($context(\\($namespace\\))\\)]($style) "
 disabled = false
-symbol = '☸️ '
+symbol = " "
+
+
+[terraform]
+format = "[$symbol\\($workspace\\)]($style) "
+symbol = " "

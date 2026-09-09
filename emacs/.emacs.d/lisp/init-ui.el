@@ -28,7 +28,7 @@
 ;;; font.el --- Personal font configuration -*- lexical-binding: t; -*-
 
 (defconst my-default-font-family "Google Sans Code NF") 
-(defconst my-default-font-size 11)
+(defconst my-default-font-size 13)
 
 ;; Apply the font to frames created later, including daemon/client frames.
 (add-to-list 'default-frame-alist
@@ -74,8 +74,8 @@
 
 (with-eval-after-load 'pixel-scroll
   (define-key pixel-scroll-precision-mode-map (kbd "<next>")
-	      #'my-scroll-half-page-up)
+	      #'my-scroll-half-page-down)
   (define-key pixel-scroll-precision-mode-map (kbd "<prior>")
-	      #'my-scroll-half-page-down))
+	      #'my-scroll-half-page-up))
 
 (provide 'init-ui)

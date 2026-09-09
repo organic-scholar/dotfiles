@@ -394,7 +394,6 @@
   "editor.smoothScrolling": true,
   "makefile.configureOnOpen": true,
   "workbench.experimental.modernUI": true,
-  "chat.viewSessions.orientation": "stacked",
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorBlinking": true,
   "breadcrumbs.enabled": false,
@@ -412,4 +411,10 @@
     "**/.forgejo/workflows/*.yaml",
   ],
   "editor.cursorSurroundingLines": 100,
+  "chat.viewSessions.orientation": "stacked",
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontWeight": "normal",
+  "editor.fontSize": 13,
+  "terminal.integrated.customGlyphs": true,
+  "terminal.integrated.unicodeVersion": "11",
 }
