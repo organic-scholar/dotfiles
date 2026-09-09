@@ -28,6 +28,7 @@
 (require 'init-markdown)
 (require 'init-format)
 (require 'init-projects)
+(require 'init-treemacs)
 (require 'init-files)
 (require 'init-super-save)
 (require 'init-shell)

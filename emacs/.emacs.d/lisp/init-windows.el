@@ -59,11 +59,11 @@
   (put command 'repeat-map 'my/window-resize-map))
 
 
-  (setq window-divider-default-right-width 2
-        window-divider-default-bottom-width 2
-        window-divider-default-places t)
+(setq window-divider-default-right-width 2
+      window-divider-default-bottom-width 1
+      window-divider-default-places t)
 
-  (window-divider-mode 1)
+(window-divider-mode 1)
 
 
 (scroll-bar-mode -1)
