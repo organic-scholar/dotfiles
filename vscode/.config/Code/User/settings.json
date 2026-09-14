@@ -153,7 +153,9 @@
     "yamlencode",
   ],
   "files.autoSaveDelay": 10000,
-  "terminal.integrated.commandsToSkipShell": ["workbench.action.focusSideBar"],
+  "terminal.integrated.commandsToSkipShell": [
+    "workbench.action.focusSideBar"
+  ],
   "[jinja]": {},
   "workbench.iconTheme": "vscode-icons",
   "[mako]": {},
@@ -213,53 +215,109 @@
   "vim.leader": ",",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "f"],
-      "commands": ["workbench.action.quickOpen"],
+      "before": [
+        "<leader>",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ],
     },
     {
-      "before": ["<leader>", "w"],
-      "commands": ["workbench.action.files.save"],
+      "before": [
+        "<leader>",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.files.save"
+      ],
     },
     {
-      "before": ["<leader>", "q"],
-      "commands": ["workbench.action.closeActiveEditor"],
+      "before": [
+        "<leader>",
+        "q"
+      ],
+      "commands": [
+        "workbench.action.closeActiveEditor"
+      ],
     },
     {
-      "before": ["<leader>", "r"],
-      "commands": ["fileutils.renameFile"],
+      "before": [
+        "<leader>",
+        "r"
+      ],
+      "commands": [
+        "fileutils.renameFile"
+      ],
     },
     {
-      "before": ["<leader>", "n"],
-      "commands": ["fileutils.newFile"],
+      "before": [
+        "<leader>",
+        "n"
+      ],
+      "commands": [
+        "fileutils.newFile"
+      ],
     },
     {
-      "before": ["<leader>", "t"],
-      "commands": ["workbench.action.togglePanel"],
+      "before": [
+        "<leader>",
+        "t"
+      ],
+      "commands": [
+        "workbench.action.togglePanel"
+      ],
     },
     {
-      "before": ["s"],
-      "after": ["<leader>", "<leader>", "f"],
+      "before": [
+        "s"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "f"
+      ],
     },
     {
-      "before": ["S"],
-      "after": ["<leader>", "<leader>", "F"],
+      "before": [
+        "S"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "F"
+      ],
     },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": [">"],
-      "after": [">", "g", "v"],
+      "before": [
+        ">"
+      ],
+      "after": [
+        ">",
+        "g",
+        "v"
+      ],
     },
     {
-      "before": ["<"],
-      "after": ["<", "g", "v"],
+      "before": [
+        "<"
+      ],
+      "after": [
+        "<",
+        "g",
+        "v"
+      ],
     },
   ],
   "cmake.configureOnOpen": true,
   "[dart]": {
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
-    "editor.rulers": [80],
+    "editor.rulers": [
+      80
+    ],
     "editor.selectionHighlight": false,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
@@ -323,7 +381,9 @@
   "window.commandCenter": false,
   "window.menuBarVisibility": "toggle",
   "ansible.lightspeed.enabled": false,
-  "autopep8.args": ["--max-line-length=100"],
+  "autopep8.args": [
+    "--max-line-length=100"
+  ],
   "docker.extension.enableComposeLanguageServer": false,
   "window.customTitleBarVisibility": "never",
   "keyboard.dispatch": "keyCode",
@@ -336,7 +396,7 @@
   // "editor.suggestSelection": "first",
   "editor.tabCompletion": "on",
   "emmet.triggerExpansionOnTab": true,
-  "workbench.colorTheme": "Tokyo Night",
+  "workbench.colorTheme": "Tomorrow Night",
   "workbench.colorCustomizations": {
     "[Vira*]": {
       "statusBar.debuggingBackground": "#80CBC433",
@@ -417,4 +477,5 @@
   "editor.fontSize": 13,
   "terminal.integrated.customGlyphs": true,
   "terminal.integrated.unicodeVersion": "11",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
 }

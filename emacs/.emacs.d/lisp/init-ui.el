@@ -27,8 +27,11 @@
 
 ;;; font.el --- Personal font configuration -*- lexical-binding: t; -*-
 
-(defconst my-default-font-family "Google Sans Code NF") 
-(defconst my-default-font-size 13)
+(defconst my-default-font-family "Google Sans Code NF")
+(defconst my-default-font-size
+  (if (eq system-type 'darwin)
+      13
+    10))
 
 ;; Apply the font to frames created later, including daemon/client frames.
 (add-to-list 'default-frame-alist

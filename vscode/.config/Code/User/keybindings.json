@@ -2,6 +2,10 @@
 [
     // global navigation
     // =================
+    // {
+    //     "key": "ctrl+c t n",
+    //     "command": "workbench.action.browser.newTab",
+    // },
     {
         "key": "ctrl+h",
         "command": "workbench.action.focusSideBar",

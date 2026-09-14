@@ -24,6 +24,7 @@
 (require 'init-git)
 (require 'init-rust)
 (require 'init-yaml)
+(require 'init-protobuf)
 (require 'init-helm)
 (require 'init-markdown)
 (require 'init-format)
@@ -45,7 +46,13 @@
  '(custom-safe-themes
    '("7771c8496c10162220af0ca7b7e61459cb42d18c35ce272a63461c0fc1336015"
      default))
- '(package-selected-packages nil))
+ '(package-selected-packages
+   '(apheleia base16-theme cape copilot corfu crux doom-themes ef-themes
+	      embark-consult magit marginalia markdown-mode
+	      nerd-icons-corfu no-littering orderless protobuf-mode
+	      rainbow-delimiters rust-mode super-save
+	      treemacs-nerd-icons treemacs-projectile treemacs-tab-bar
+	      vertico vterm yaml-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

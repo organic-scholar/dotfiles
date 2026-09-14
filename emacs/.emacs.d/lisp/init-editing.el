@@ -1,6 +1,22 @@
 ;;; init-editing.el --- General editing behavior -*- lexical-binding: t; -*-
 
+(require 'use-package)
+
 (electric-pair-mode 1)
+
+;; Make Lisp delimiters easier to scan by coloring each nesting level.
+(use-package rainbow-delimiters
+  :ensure t
+  :hook ((emacs-lisp-mode lisp-mode scheme-mode clojure-mode) . rainbow-delimiters-mode))
+
+;; Highlight the matching delimiter at point with a stronger face.
+(setq show-paren-delay 0
+      show-paren-style 'parenthesis)
+(set-face-attribute 'show-paren-match nil
+                    :weight 'bold
+                    :underline t)
+(show-paren-mode 1)
+
 
 (defun init/backward-kill-word-or-line (arg)
   "Delete backward ARG times using VS Code-like boundaries."

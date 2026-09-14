@@ -29,7 +29,7 @@ renamed tab remains unchanged because `tab-bar-rename-tab' stores its name."
 
 ;; Keep tab-bar commands under C-c followed by Tab.
 ;;(keymap-unset global-map "C-c t")
-(keymap-set global-map "C-c TAB" my/tab-bar-command-map)
+(keymap-set global-map "C-c t" my/tab-bar-command-map)
 
 (provide 'init-tabs)
 ;;; tabs.el ends here

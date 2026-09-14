@@ -42,6 +42,23 @@
       (when (derived-mode-p 'vterm-mode)
         (init-vterm-enable-desktop-saving)))))
 
+(defun init-vterm-projectile ()
+  "Open a Vterm buffer in the current Projectile project when possible."
+  (interactive)
+  (if (and (fboundp 'projectile-project-p)
+           (projectile-project-p))
+      (call-interactively #'projectile-run-vterm)
+    (call-interactively #'vterm)))
+
+(defun init-vterm-projectile-new ()
+  "Open a new Vterm buffer in the current Projectile project when possible."
+  (interactive)
+  (if (and (fboundp 'projectile-project-p)
+           (projectile-project-p))
+      (projectile-run-vterm t)
+    (let ((current-prefix-arg t))
+      (call-interactively #'vterm))))
+
 (use-package vterm
   :ensure t
   :commands vterm
@@ -56,7 +73,8 @@
 
 ;; The shell prefix map is defined by init-shell; Vterm owns its own entry.
 (with-eval-after-load 'init-shell
-  (keymap-set my/shell-command-map "v" #'vterm))
+  (keymap-set my/shell-command-map "v" #'init-vterm-projectile)
+  (keymap-set my/shell-command-map "V" #'init-vterm-projectile-new))
 
 (with-eval-after-load 'vterm
   (advice-add #'vterm--filter

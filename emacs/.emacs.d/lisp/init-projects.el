@@ -57,14 +57,27 @@
 (global-set-key (kbd "C-x C-f") #'init/find-file)
 
 (defun my/projectile-open-in-new-tab ()
-  "Open a Projectile project in a new named tab."
+  "Open a Projectile project in a new named tab with Treemacs and a split layout."
   (interactive)
   (tab-bar-new-tab)
   (let ((project (projectile-completing-read
-                   "Switch to project: "
-                   (projectile-relevant-known-projects))))
+                  "Switch to project: "
+                  (projectile-relevant-known-projects))))
     (projectile-switch-project-by-name project)
-    (tab-bar-rename-tab (projectile-project-name))))
+    (tab-bar-rename-tab (projectile-project-name))
+    ;; Open Treemacs in the left sidebar and create a two-level split in the
+    ;; remaining area: bottom pane fixed at 10 lines, right pane fixed at 20 cols.
+    (let ((main (selected-window))
+	  (bottom (split-window-below -10))
+	  (right (split-window-right -40)))
+      (select-window right)
+      (projectile-run-vterm)
+      (select-window bottom)
+      (projectile-run-eshell)
+      
+      )
+    )
+  )
 
 ;; Keep Projectile's `C-c p t' toggle command; use `C-c p C-t' for tabs.
 (define-key projectile-command-map (kbd "t") #'my/projectile-open-in-new-tab)
@@ -73,8 +86,8 @@
   "Switch to a Projectile project without opening a new tab."
   (interactive)
   (let ((project (projectile-completing-read
-                   "Switch to project: "
-                   (projectile-relevant-known-projects))))
+                  "Switch to project: "
+                  (projectile-relevant-known-projects))))
     (projectile-switch-project-by-name project)
     (tab-bar-rename-tab (projectile-project-name))
     ))

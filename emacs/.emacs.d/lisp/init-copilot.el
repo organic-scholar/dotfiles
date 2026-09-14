@@ -3,22 +3,24 @@
 (use-package copilot
   :ensure t
   :hook ((prog-mode . copilot-mode)
-         (prog-mode . copilot-nes-mode))
+         ;; (prog-mode . copilot-nes-mode)
+	 )
   :config
-  (keymap-set copilot-completion-map "C-<tab>" #'copilot-accept-completion-by-word)
+  (keymap-set copilot-completion-map "<tab>" #'copilot-accept-completion)
+  (keymap-set copilot-completion-map "TAB" #'copilot-accept-completion)
   (keymap-set copilot-completion-map "<right>" #'copilot-accept-completion)
   (keymap-set copilot-completion-map "M-<right>" #'copilot-accept-completion-by-word)
   (keymap-set copilot-completion-map "<end>" #'copilot-accept-completion-by-line)
   (keymap-set copilot-completion-map "M-n" #'copilot-next-completion)
   (keymap-set copilot-completion-map "M-p" #'copilot-previous-completion)
-  (keymap-unset copilot-completion-map "<tab>")
-  (keymap-unset copilot-completion-map "TAB")
+
   
   ;; `copilot.el' cannot infer these tree-sitter modes' indentation width.
   ;; Supplying it keeps ghost-text suggestions aligned with our formatting.
   (add-to-list 'copilot-indentation-alist '(prog-mode 2))
   (add-to-list 'copilot-indentation-alist '(org-mode 2))
   (add-to-list 'copilot-indentation-alist '(text-mode 2))
+  (add-to-list 'copilot-indentation-alist '(rust-mode 4))
   (add-to-list 'copilot-indentation-alist '(closure-mode 2))
   (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2))
   ;; Suppress Copilot's fallback-to-`tab-width' diagnostic for modes that
