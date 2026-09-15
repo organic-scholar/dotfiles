@@ -396,7 +396,6 @@
   // "editor.suggestSelection": "first",
   "editor.tabCompletion": "on",
   "emmet.triggerExpansionOnTab": true,
-  "workbench.colorTheme": "Tomorrow Night",
   "workbench.colorCustomizations": {
     "[Vira*]": {
       "statusBar.debuggingBackground": "#80CBC433",
@@ -471,11 +470,12 @@
     "**/.forgejo/workflows/*.yaml",
   ],
   "editor.cursorSurroundingLines": 100,
-  "chat.viewSessions.orientation": "stacked",
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.fontWeight": "normal",
   "editor.fontSize": 13,
   "terminal.integrated.customGlyphs": true,
   "terminal.integrated.unicodeVersion": "11",
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "chat.viewSessions.orientation": "stacked",
+  "workbench.colorTheme": "Tokyo Night",
 }

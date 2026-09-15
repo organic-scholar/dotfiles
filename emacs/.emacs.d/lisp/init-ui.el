@@ -40,14 +40,14 @@
                                my-default-font-size)))
 
 ;; Add a little vertical space between lines.
-(setq-default line-spacing 0.15)
+(setq-default line-spacing 0.3)
 (setq whitespace-line-column 120)
 
 ;; Apply it immediately when Emacs starts with a graphical frame.
 (when (display-graphic-p)
   (set-face-attribute 'default nil
-                      :family my-default-font-family
-                      :height (* my-default-font-size 10)))
+		      :family my-default-font-family
+		      :height (* my-default-font-size 10)))
 
 (require 'pixel-scroll)
 

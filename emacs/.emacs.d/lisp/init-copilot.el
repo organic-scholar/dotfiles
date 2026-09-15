@@ -21,6 +21,9 @@
   (add-to-list 'copilot-indentation-alist '(org-mode 2))
   (add-to-list 'copilot-indentation-alist '(text-mode 2))
   (add-to-list 'copilot-indentation-alist '(rust-mode 4))
+  (add-to-list 'copilot-indentation-alist '(rust-ts-mode 4))
+  (add-to-list 'copilot-indentation-alist '(typescript-ts-mode 2))
+  (add-to-list 'copilot-indentation-alist '(tsx-ts-mode 2))
   (add-to-list 'copilot-indentation-alist '(closure-mode 2))
   (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2))
   ;; Suppress Copilot's fallback-to-`tab-width' diagnostic for modes that

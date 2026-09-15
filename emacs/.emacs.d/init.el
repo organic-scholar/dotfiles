@@ -23,6 +23,7 @@
 (require 'init-corfu)
 (require 'init-git)
 (require 'init-rust)
+(require 'init-typescript)
 (require 'init-yaml)
 (require 'init-protobuf)
 (require 'init-helm)

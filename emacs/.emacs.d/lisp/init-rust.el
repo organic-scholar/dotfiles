@@ -6,10 +6,19 @@
   :ensure nil
   :demand t)
 
+(use-package treesit
+  :ensure nil
+  :config
+  (add-to-list 'treesit-language-source-alist
+               '(rust . ("https://github.com/tree-sitter/tree-sitter-rust"))))
+
 (use-package rust-mode
-  :ensure t
+  :ensure t)
+
+(use-package rust-ts-mode
+  :ensure nil
   :mode "\\.rs\\'"
-  :hook (rust-mode . eglot-ensure))
+  :hook (rust-ts-mode . eglot-ensure))
 
 (provide 'init-rust)
 ;;; init-rust.el ends here
