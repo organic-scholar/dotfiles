@@ -4,7 +4,10 @@
 
 (use-package avy
   :ensure t
-  :bind ("C-c j" . avy-goto-char-timer))
+  :bind ("C-c j" . avy-goto-char-timer)
+  :custom
+  (avy-all-windows nil)
+  (avy-all-windows-alt nil))
 
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 

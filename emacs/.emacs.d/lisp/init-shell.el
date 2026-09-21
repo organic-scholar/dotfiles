@@ -4,6 +4,33 @@
   "Disable line numbers in Eshell buffers."
   (display-line-numbers-mode -1))
 
+(defun init-eshell-desktop-save (_desktop-dir)
+  "Return the working directory needed to recreate an Eshell buffer."
+  (list default-directory))
+
+(defun init-eshell-desktop-restore (_file-name buffer-name misc)
+  "Create an Eshell named BUFFER-NAME in the saved directory from MISC."
+  (let ((directory (car misc)))
+    (when (file-directory-p directory)
+      (let ((default-directory directory)
+            (buffer (get-buffer-create buffer-name)))
+        (with-current-buffer buffer
+          (setq default-directory directory)
+          (unless (derived-mode-p 'eshell-mode)
+            (eshell-mode)))
+        buffer))))
+
+(defun init-eshell-enable-desktop-saving ()
+  "Save enough state for desktop.el to recreate this Eshell buffer."
+  (setq-local desktop-save-buffer #'init-eshell-desktop-save))
+
+(defun init-eshell-enable-desktop-saving-in-existing-buffers ()
+  "Enable desktop saving for Eshell buffers that are already open."
+  (dolist (buffer (buffer-list))
+    (with-current-buffer buffer
+      (when (derived-mode-p 'eshell-mode)
+        (init-eshell-enable-desktop-saving)))))
+
 (defun init-eshell-projectile ()
   "Open an Eshell buffer in the current Projectile project when possible."
   (interactive)
@@ -28,6 +55,14 @@
 
 
 (add-hook 'eshell-mode-hook #'init-eshell-disable-line-numbers)
+(add-hook 'eshell-mode-hook #'init-eshell-enable-desktop-saving)
+
+(with-eval-after-load 'esh-mode
+  (init-eshell-enable-desktop-saving-in-existing-buffers))
+
+(with-eval-after-load 'desktop
+  (add-to-list 'desktop-buffer-mode-handlers
+               '(eshell-mode . init-eshell-desktop-restore)))
 
 ;; Use arrows for buffer navigation and C-p/C-n for command history in Eshell.
 (with-eval-after-load 'em-hist

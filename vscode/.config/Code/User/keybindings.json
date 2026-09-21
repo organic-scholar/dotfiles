@@ -7,6 +7,14 @@
     //     "command": "workbench.action.browser.newTab",
     // },
     {
+        "key": "ctrl+space",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u0000"
+        },
+        "when": "terminalFocus"
+    },
+    {
         "key": "ctrl+h",
         "command": "workbench.action.focusSideBar",
         "context": "editorFocus || panelFocus"

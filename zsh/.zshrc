@@ -5,7 +5,7 @@ export QMK_HOME="${HOME}/git/vial-qmk"
 
 # Source local libraries
 source "$ZSH_LIB/aliases.zsh"
-# source "$ZSH_LIB/paths.zsh"
+source "$ZSH_LIB/paths.zsh"
 source "$ZSH_LIB/history.zsh"
 source "$ZSH_LIB/prompt.zsh"
 source "$ZSH_LIB/zoxide.zsh"
@@ -71,7 +71,8 @@ unsetopt BASH_AUTO_LIST
 # Key bindings
 bindkey '^I' autosuggest-accept
 # bindkey '^I' forward-word
-bindkey '\x1f' fzf-tab-complete
+bindkey '^O' fzf-tab-complete
+bindkey '^@' fzf-tab-complete  # Ctrl-Space
 source "$ZSH_LIB/keymaps.zsh"
 
 
@@ -94,3 +95,7 @@ alias docker=podman
 export PATH="/home/nauman/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 #
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

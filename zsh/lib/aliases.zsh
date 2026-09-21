@@ -3,12 +3,12 @@
 alias vim=nvim
 alias k=kubectl
 alias resrc="source $HOME/.zshrc"
-alias serve='http-server && google-chrome locahost:3000'
+alias serve='http-server && google-chrome localhost:3000'
 alias servephp='php -S localhost:8000'
 alias untar='tar -xvf'
 alias gamend='git add . && git commit --amend --no-edit && git push origin --force-with-lease'
 alias tf='terraform'
-alias ls='eza -la --no-permissions --no-user --time-style=relative --group-directories-first --icons'
+alias ls='eza -la --no-permissions --no-user --time-style=relative --group-directories-first --icons auto'
 
 mkcd() {
   mkdir "$1"

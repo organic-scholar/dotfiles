@@ -7,6 +7,7 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (require 'init-package)
+(require 'init-path)
 (require 'init-no-littering)
 (require 'init-ui)
 (require 'init-themes)
@@ -23,6 +24,7 @@
 (require 'init-corfu)
 (require 'init-git)
 (require 'init-rust)
+(require 'init-clojure)
 (require 'init-typescript)
 (require 'init-yaml)
 (require 'init-protobuf)
@@ -48,10 +50,10 @@
    '("7771c8496c10162220af0ca7b7e61459cb42d18c35ce272a63461c0fc1336015"
      default))
  '(package-selected-packages
-   '(apheleia base16-theme cape copilot corfu crux doom-themes ef-themes
-	      embark-consult magit marginalia markdown-mode
-	      nerd-icons-corfu no-littering orderless protobuf-mode
-	      rainbow-delimiters rust-mode super-save
+   '(apheleia base16-theme cape cider clojure-mode copilot corfu crux
+	      doom-themes ef-themes embark-consult magit marginalia
+	      markdown-mode nerd-icons-corfu no-littering orderless
+	      protobuf-mode rainbow-delimiters rust-mode super-save
 	      treemacs-nerd-icons treemacs-projectile treemacs-tab-bar
 	      vertico vterm yaml-mode)))
 (custom-set-faces

@@ -1,0 +1,1 @@
+source "$HOME/dotfiles/zsh/lib/paths.zsh"

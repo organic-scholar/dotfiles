@@ -20,7 +20,8 @@
 (setq ring-bell-function #'ignore)
 
 ;; Use a vertical bar cursor instead of a block cursor.
-(setq-default cursor-type 'bar)
+(setq-default cursor-type 'bar
+              cursor-in-non-selected-windows nil)
 
 ;; Show absolute line numbers in every buffer where they are supported.
 (global-display-line-numbers-mode 1)

@@ -318,10 +318,9 @@
     "editor.rulers": [
       80
     ],
-    "editor.selectionHighlight": false,
+    "editor.selectionHighlight": true,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
-    "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": "off",
   },
   "diffEditor.ignoreTrimWhitespace": false,
@@ -478,4 +477,8 @@
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "chat.viewSessions.orientation": "stacked",
   "workbench.colorTheme": "Tokyo Night",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.suggest.enabled": false,
+  "terminal.integrated.shellIntegration.enabled": false,
 }

@@ -5,6 +5,8 @@
 
 (use-package corfu
   :ensure t
+  :bind (("C-SPC" . completion-at-point)
+         ("C-o" . completion-at-point))
   :init
   ;; Keep Vertico responsible for minibuffer completion.
   (setq global-corfu-minibuffer nil)
@@ -16,7 +18,10 @@
   (setq corfu-auto t
         corfu-auto-delay 0.2
         corfu-auto-trigger ".:"
-        corfu-auto-prefix most-positive-fixnum)
+        corfu-auto-prefix most-positive-fixnum
+        corfu-preselect 'first)
+  (keymap-set corfu-map "TAB" #'corfu-insert)
+  (keymap-set corfu-map "<tab>" #'corfu-insert)
   (global-corfu-mode 1))
 
 (defun init-corfu-nerd-icons-formatter (metadata)

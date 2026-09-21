@@ -56,28 +56,53 @@
 
 (global-set-key (kbd "C-x C-f") #'init/find-file)
 
+(defun my/projectile--normalize-project-root (project)
+  "Return a canonical directory name for PROJECT."
+  (file-name-as-directory (expand-file-name project)))
+
+(defun my/projectile--project-tab (project)
+  "Return the tab associated with PROJECT, if one exists."
+  (let ((root (my/projectile--normalize-project-root project))
+        (name (projectile-project-name project)))
+    (seq-find
+     (lambda (tab)
+       (let ((tab-root (alist-get 'project-root (cdr tab))))
+         (if tab-root
+             (equal root tab-root)
+           (equal name (alist-get 'name (cdr tab))))))
+     (tab-bar-tabs))))
+
+(defun my/projectile--set-current-tab-project (project)
+  "Associate the current tab with PROJECT."
+  (let ((tab (tab-bar--current-tab-find))
+        (root (my/projectile--normalize-project-root project)))
+    (setcdr tab (cons (cons 'project-root root)
+                      (assq-delete-all 'project-root (cdr tab))))))
+
 (defun my/projectile-open-in-new-tab ()
-  "Open a Projectile project in a new named tab with Treemacs and a split layout."
+  "Select a project tab, creating its split layout when needed."
   (interactive)
-  (tab-bar-new-tab)
   (let ((project (projectile-completing-read
                   "Switch to project: "
                   (projectile-relevant-known-projects))))
-    (projectile-switch-project-by-name project)
-    (tab-bar-rename-tab (projectile-project-name))
-    ;; Open Treemacs in the left sidebar and create a two-level split in the
-    ;; remaining area: bottom pane fixed at 10 lines, right pane fixed at 20 cols.
-    (let ((main (selected-window))
-	  (bottom (split-window-below -10))
-	  (right (split-window-right -40)))
-      (select-window right)
-      (projectile-run-vterm)
-      (select-window bottom)
-      (projectile-run-eshell)
-      
-      )
-    )
-  )
+    (if-let* ((tab (my/projectile--project-tab project)))
+        (progn
+          (tab-bar-select-tab
+           (1+ (seq-position (tab-bar-tabs) tab #'eq)))
+          ;; Add root metadata when an older tab was matched by its name.
+          (my/projectile--set-current-tab-project project))
+      (tab-bar-new-tab)
+      (projectile-switch-project-by-name project)
+      (tab-bar-rename-tab (projectile-project-name))
+      (my/projectile--set-current-tab-project project)
+      ;; Create a two-level split: bottom pane fixed at 10 lines and right
+      ;; pane fixed at 40 columns.
+      (let ((bottom (split-window-below -10))
+            (right (split-window-right -40)))
+        (select-window right)
+        (projectile-run-vterm)
+        (select-window bottom)
+        (projectile-run-eshell)))))
 
 ;; Keep Projectile's `C-c p t' toggle command; use `C-c p C-t' for tabs.
 (define-key projectile-command-map (kbd "t") #'my/projectile-open-in-new-tab)
