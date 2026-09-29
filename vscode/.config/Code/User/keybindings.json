@@ -2,10 +2,14 @@
 [
     // global navigation
     // =================
-    // {
-    //     "key": "ctrl+c t n",
-    //     "command": "workbench.action.browser.newTab",
-    // },
+    {
+        "key": "meta+v",
+        "command": "editor.action.clipboardPasteAction"
+    },
+    {
+        "key": "meta+x",
+        "command": "editor.action.clipboardCutAction"
+    },
     {
         "key": "ctrl+space",
         "command": "workbench.action.terminal.sendSequence",

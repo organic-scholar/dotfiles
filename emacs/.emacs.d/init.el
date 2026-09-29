@@ -10,6 +10,7 @@
 (require 'init-path)
 (require 'init-no-littering)
 (require 'init-ui)
+(require 'init-qmk-layer-indicator)
 (require 'init-themes)
 (require 'init-header-line)
 (require 'init-buffers)

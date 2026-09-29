@@ -1,5 +1,6 @@
 PATH="$HOME/.local/share/mise/shims:$PATH"
 PATH="$HOME/go/bin:$PATH"
+PATH="$HOME/.cargo/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 
 [[ "$OSTYPE" == "darwin"* ]] && PATH="/opt/homebrew/bin:$PATH"

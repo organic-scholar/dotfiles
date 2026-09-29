@@ -90,12 +90,6 @@ eval "$(starship init zsh)"
 
 alias docker=podman
 
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/home/nauman/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-#
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+if [[ -f "$HOME/.local/share/qmk-layer-indicator/shell/qmk-layer-indicator.zsh" ]]; then
+  source "$HOME/.local/share/qmk-layer-indicator/shell/qmk-layer-indicator.zsh"
+fi

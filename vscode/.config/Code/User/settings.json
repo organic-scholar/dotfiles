@@ -460,14 +460,7 @@
     "comments": "off",
     "strings": "off",
   },
-  "yaml.disableSchemaDetection": [
-    "**/.github/workflows/*.yml",
-    "**/.github/workflows/*.yaml",
-    "**/.gitea/workflows/*.yml",
-    "**/.gitea/workflows/*.yaml",
-    "**/.forgejo/workflows/*.yml",
-    "**/.forgejo/workflows/*.yaml",
-  ],
+  "yaml.disableSchemaDetection": [],
   "editor.cursorSurroundingLines": 100,
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.fontWeight": "normal",
@@ -481,4 +474,7 @@
   "terminal.integrated.gpuAcceleration": "on",
   "terminal.integrated.suggest.enabled": false,
   "terminal.integrated.shellIntegration.enabled": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }
