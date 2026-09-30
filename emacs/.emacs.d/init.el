@@ -38,6 +38,7 @@
 (require 'init-super-save)
 (require 'init-shell)
 (require 'init-vterm)
+(require 'init-ghostel)
 (require 'init-spell)
 (require 'init-tabs)
 (require 'init-desktop)
@@ -56,7 +57,7 @@
 	      markdown-mode nerd-icons-corfu no-littering orderless
 	      protobuf-mode rainbow-delimiters rust-mode super-save
 	      treemacs-nerd-icons treemacs-projectile treemacs-tab-bar
-	      vertico vterm yaml-mode)))
+	      vertico vterm websocket yaml-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
