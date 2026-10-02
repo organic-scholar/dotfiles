@@ -30,6 +30,10 @@ Like normal Emacs `C-k'.  Kill to end of line and put content in kill-ring."
   (add-to-list 'project-switch-commands '(ghostel-project-list-buffers "Ghostel buffers") t)
   (add-to-list 'ghostel-eval-cmds '("magit-status-setup-buffer" magit-status-setup-buffer)))
 
+;; The shell prefix map is defined by init-shell.
+(with-eval-after-load 'init-shell
+  (keymap-set my/shell-command-map "g" #'ghostel-project))
+
 (use-package ghostel-eshell
   :hook (eshell-load . ghostel-eshell-visual-command-mode))
 
